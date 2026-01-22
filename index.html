@@ -1,0 +1,2820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ===== META TAGS FOR SEO ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Yousaf | UI/UX Designer | Pakistan - Professional Portfolio</title>
+    <meta name="description" content="Muhammad Yousaf - Experienced UI/UX Designer from Pakistan with over 1 year of professional experience in Figma, Adobe Creative Suite, and user-centered design.">
+    <meta name="keywords" content="UI/UX Designer, Pakistan, Figma, Web Design, Mobile App Design, User Experience, User Interface, Portfolio">
+    <meta name="author" content="Muhammad Yousaf" ../>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Muhammad Yousaf | UI/UX Designer Portfolio">
+    <meta property="og:description" content="Professional UI/UX Designer with expertise in creating intuitive, user-centered digital experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://muhammadyousaf.design">
+    <meta property="og:image" content="https://muhammadyousaf.design/assets/profile-img.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Muhammad Yousaf | UI/UX Designer">
+    <meta name="twitter:description" content="Creating beautiful, functional digital experiences as a UI/UX Designer from Pakistan.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://muhammadyousaf.design">
+    
+    <!-- Structured Data / JSON-LD for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Yousaf",
+        "jobTitle": "UI/UX Designer",
+        "url": "https://muhammadyousaf.design",
+        "sameAs": [
+            "https://behance.net/muhammadyousaf",
+            "https://fiverr.com/muhammadyousaf",
+            "https://upwork.com/freelancers/~muhammadyousaf",
+            "https://linkedin.com/in/muhammadyousaf",
+            "https://dribbble.com/muhammadyousaf"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Pakistan"
+        },
+        "email": "freelanceryousaf69@gmail.com",
+        "knowsAbout": ["UI/UX Design", "Figma", "Adobe Creative Suite", "User Research", "Wireframing", "Prototyping", "Web Design", "Mobile App Design"]
+    }
+    </script>
+
+<!-- ===== TAILWIND CSS ===== -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- ===== TAILWIND CONFIGURATION ===== -->
+<script>
+    tailwind.config = {
+        darkMode: 'selector',
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#b820e6',
+                    secondary: '#da7d20',
+                    darkTheme: '#0f011d',
+                    darkHover: '#1a0035',
+                    lightHover: '#f9f0ff',
+                },
+                fontFamily: {
+                    Outfit: ["Outfit", "sans-serif"],
+                    Ovo: ["Ovo", "serif"]
+                },
+                animation: {
+                    'float': 'float 6s ease-in-out infinite',
+                    'float-slow': 'float 8s ease-in-out infinite',
+                    'spin-slow': 'spin 20s linear infinite',
+                    'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+                    'slide-up': 'slide-up 0.7s ease-out forwards',
+                    'slide-down': 'slide-down 0.7s ease-out forwards',
+                    'slide-left': 'slide-left 0.7s ease-out forwards',
+                    'slide-right': 'slide-right 0.7s ease-out forwards',
+                    'fade-in': 'fade-in 0.8s ease-out forwards',
+                    'text-shimmer': 'text-shimmer 3s ease-in-out infinite',
+                    'morph': 'morph 10s ease-in-out infinite',
+                    'gradient-flow': 'gradient-flow 4s ease infinite',
+                    'border-glow': 'border-glow 2s ease-in-out infinite',
+                    'card-float': 'card-float 5s ease-in-out infinite',
+                    'blob': 'blob 10s infinite',
+                },
+                keyframes: {
+                    float: {
+                        '0%, 100%': { transform: 'translateY(0px)' },
+                        '50%': { transform: 'translateY(-20px)' }
+                    },
+                    'pulse-glow': {
+                        '0%, 100%': { 
+                            boxShadow: '0 0 20px rgba(184, 32, 230, 0.3)',
+                            transform: 'scale(1)'
+                        },
+                        '50%': { 
+                            boxShadow: '0 0 40px rgba(184, 32, 230, 0.6)',
+                            transform: 'scale(1.05)'
+                        }
+                    },
+                    'slide-up': {
+                        'from': { 
+                            opacity: '0',
+                            transform: 'translateY(40px) scale(0.95)'
+                        },
+                        'to': { 
+                            opacity: '1',
+                            transform: 'translateY(0) scale(1)'
+                        }
+                    },
+                    'slide-down': {
+                        'from': { 
+                            opacity: '0',
+                            transform: 'translateY(-40px) scale(0.95)'
+                        },
+                        'to': { 
+                            opacity: '1',
+                            transform: 'translateY(0) scale(1)'
+                        }
+                    },
+                    'slide-left': {
+                        'from': { 
+                            opacity: '0',
+                            transform: 'translateX(40px) scale(0.95)'
+                        },
+                        'to': { 
+                            opacity: '1',
+                            transform: 'translateX(0) scale(1)'
+                        }
+                    },
+                    'slide-right': {
+                        'from': { 
+                            opacity: '0',
+                            transform: 'translateX(-40px) scale(0.95)'
+                        },
+                        'to': { 
+                            opacity: '1',
+                            transform: 'translateX(0) scale(1)'
+                        }
+                    },
+                    'fade-in': {
+                        'from': { opacity: '0' },
+                        'to': { opacity: '1' }
+                    },
+                    'text-shimmer': {
+                        '0%': { 'background-position': '0% 50%' },
+                        '50%': { 'background-position': '100% 50%' },
+                        '100%': { 'background-position': '0% 50%' }
+                    },
+                    'morph': {
+                        '0%, 100%': { borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%' },
+                        '50%': { borderRadius: '30% 60% 70% 40%/50% 60% 30% 60%' }
+                    },
+                    'gradient-flow': {
+                        '0%, 100%': { 'background-position': '0% 50%' },
+                        '50%': { 'background-position': '100% 50%' }
+                    },
+                    'border-glow': {
+                        '0%, 100%': { 
+                            'border-color': 'rgba(184, 32, 230, 0.3)',
+                            'box-shadow': '0 0 10px rgba(184, 32, 230, 0.3)'
+                        },
+                        '50%': { 
+                            'border-color': 'rgba(184, 32, 230, 0.7)',
+                            'box-shadow': '0 0 25px rgba(184, 32, 230, 0.5)'
+                        }
+                    },
+                    'card-float': {
+                        '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                        '50%': { transform: 'translateY(-10px) rotate(1deg)' }
+                    },
+                    'blob': {
+                        '0%': { 
+                            transform: 'translate(0px, 0px) scale(1)',
+                            borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%'
+                        },
+                        '33%': { 
+                            transform: 'translate(30px, -50px) scale(1.1)',
+                            borderRadius: '40% 60% 70% 30%/40% 70% 30% 60%'
+                        },
+                        '66%': { 
+                            transform: 'translate(-20px, 20px) scale(0.9)',
+                            borderRadius: '70% 30% 50% 50%/30% 50% 60% 70%'
+                        },
+                        '100%': { 
+                            transform: 'translate(0px, 0px) scale(1)',
+                            borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%'
+                        }
+                    }
+                },
+                backgroundImage: {
+                    'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    'gradient-shimmer': 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)',
+                }
+            }
+        }
+    }
+</script>
+
+    <!-- ===== CUSTOM CSS & ANIMATIONS ===== -->
+   <style>
+/* ===== GLOBAL STYLES & RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    overflow-x: hidden;
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Outfit', sans-serif;
+}
+
+/* ===== SELECTION STYLES ===== */
+::selection {
+    background: rgba(184, 32, 230, 0.3);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.dark ::selection {
+    background: rgba(218, 125, 32, 0.4);
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #b820e6, #da7d20);
+    border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1a0035;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #6b21a8, #ea580c);
+}
+
+/* ===== ANIMATION KEYFRAMES ===== */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        boxShadow: '0 0 20px rgba(184, 32, 230, 0.3)';
+        transform: scale(1);
+    }
+    50% { 
+        boxShadow: '0 0 40px rgba(184, 32, 230, 0.6)';
+        transform: scale(1.05);
+    }
+}
+
+@keyframes slide-up {
+    from { 
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slide-down {
+    from { 
+        opacity: 0;
+        transform: translateY(-40px) scale(0.95);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slide-left {
+    from { 
+        opacity: 0;
+        transform: translateX(40px) scale(0.95);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes slide-right {
+    from { 
+        opacity: 0;
+        transform: translateX(-40px) scale(0.95);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes text-shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes morph {
+    0%, 100% { border-radius: '60% 40% 30% 70%/60% 30% 70% 40%'; }
+    50% { border-radius: '30% 60% 70% 40%/50% 60% 30% 60%'; }
+}
+
+@keyframes gradient-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes border-glow {
+    0%, 100% { 
+        border-color: rgba(184, 32, 230, 0.3);
+        box-shadow: 0 0 10px rgba(184, 32, 230, 0.3);
+    }
+    50% { 
+        border-color: rgba(184, 32, 230, 0.7);
+        box-shadow: 0 0 25px rgba(184, 32, 230, 0.5);
+    }
+}
+
+@keyframes card-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes blob {
+    0% { 
+        transform: translate(0px, 0px) scale(1);
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    33% { 
+        transform: translate(30px, -50px) scale(1.1);
+        border-radius: 40% 60% 70% 30%/40% 70% 30% 60%;
+    }
+    66% { 
+        transform: translate(-20px, 20px) scale(0.9);
+        border-radius: 70% 30% 50% 50%/30% 50% 60% 70%;
+    }
+    100% { 
+        transform: translate(0px, 0px) scale(1);
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+@keyframes hover-lift-3d {
+    0% {
+        transform: translateY(0) rotateX(0) scale(1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        transform: translateY(-15px) rotateX(5deg) scale(1.03);
+        box-shadow: 0 25px 60px rgba(184, 32, 230, 0.15),
+                    0 10px 30px rgba(218, 125, 32, 0.1);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(40, 40);
+        opacity: 0;
+    }
+}
+
+@keyframes slide-up-fade {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes grid-reveal {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes status-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes subtle-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes hide-item {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+        display: none;
+    }
+}
+
+@keyframes show-item {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===== VIDEO PLAYER STYLES ===== */
+.video-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(184, 32, 230, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+    transform: scale(1.02);
+}
+
+.video-container:hover .video-play-btn {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #b820e6, #da7d20);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.video-play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 15px 40px rgba(184, 32, 230, 0.4);
+}
+
+.video-play-btn.playing i {
+    transform: rotate(0);
+}
+
+/* ===== PORTFOLIO SPLIT LAYOUT ===== */
+.portfolio-split-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+@media (min-width: 1024px) {
+    .portfolio-split-container {
+        flex-direction: row;
+    }
+}
+
+.portfolio-sidebar {
+    flex: 0 0 300px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark .portfolio-sidebar {
+    background: #1a0035;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-content {
+    flex: 1;
+}
+
+.category-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.dark .category-btn {
+    color: #aaa;
+}
+
+.category-btn:hover {
+    background: rgba(184, 32, 230, 0.1);
+    color: #b820e6;
+    transform: translateX(5px);
+}
+
+.dark .category-btn:hover {
+    background: rgba(184, 32, 230, 0.2);
+}
+
+.category-btn.active {
+    background: linear-gradient(45deg, rgba(184, 32, 230, 0.1), rgba(218, 125, 32, 0.1));
+    color: #b820e6;
+    font-weight: 600;
+    border-left: 4px solid #b820e6;
+}
+
+.dark .category-btn.active {
+    background: linear-gradient(45deg, rgba(184, 32, 230, 0.2), rgba(218, 125, 32, 0.2));
+}
+
+.category-btn i {
+    width: 20px;
+    text-align: center;
+}
+
+/* ===== HIRE ME CARDS ===== */
+.hire-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.dark .hire-card {
+    background: #1a0035;
+    border-color: #2a0045;
+}
+
+.hire-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(184, 32, 230, 0.15);
+    border-color: #b820e6;
+}
+
+.hire-card .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.hire-card.fiverr .icon {
+    background: linear-gradient(45deg, #1dbf73, #1dbf73);
+    color: white;
+}
+
+.hire-card.upwork .icon {
+    background: linear-gradient(45deg, #14a800, #14a800);
+    color: white;
+}
+
+/* ===== ANIMATION CLASSES ===== */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+    animation: slide-up 0.7s ease-out forwards;
+}
+
+.animate-slide-down {
+    animation: slide-down 0.7s ease-out forwards;
+}
+
+.animate-slide-left {
+    animation: slide-left 0.7s ease-out forwards;
+}
+
+.animate-slide-right {
+    animation: slide-right 0.7s ease-out forwards;
+}
+
+.animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+}
+
+.animate-text-glow {
+    background-size: 200% auto;
+    animation: text-shimmer 3s ease-in-out infinite;
+}
+
+.animate-morph {
+    animation: morph 10s ease-in-out infinite;
+}
+
+.animate-gradient-flow {
+    background-size: 400% 400%;
+    animation: gradient-flow 4s ease infinite;
+}
+
+.animate-border-glow {
+    animation: border-glow 2s ease-in-out infinite;
+}
+
+.animate-card-float {
+    animation: card-float 5s ease-in-out infinite;
+}
+
+.animate-blob {
+    animation: blob 15s infinite;
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== HOVER EFFECTS ===== */
+.hover-3d {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-3d:hover {
+    transform: translateY(-10px) scale(1.03) rotateX(5deg);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.hover-lift-3d {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.hover-lift-3d:hover {
+    animation: hover-lift-3d 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 25px rgba(184, 32, 230, 0.4);
+}
+
+/* ===== GRADIENT TEXT ===== */
+.gradient-text {
+    background: linear-gradient(90deg, #b820e6, #da7d20);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+}
+
+/* ===== GLOWING BORDER ===== */
+.glow-border {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.glow-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #b820e6, #da7d20, #b820e6);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.glow-border:hover::before {
+    opacity: 1;
+    animation: border-glow 2s ease-in-out infinite;
+}
+
+/* ===== BLOB ANIMATION CONTAINER ===== */
+.blob-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, rgba(184, 32, 230, 0.1), rgba(218, 125, 32, 0.1));
+    filter: blur(40px);
+    animation: blob 15s infinite;
+    z-index: -1;
+}
+
+/* ===== SPINNER ===== */
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+/* ===== TOOLTIP ===== */
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    transition: opacity 0.3s;
+    z-index: 100;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ===== PORTFOLIO SPECIFIC STYLES ===== */
+.filter-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.filter-btn:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+.filter-btn.active {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.filter-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: slide-up-fade 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.portfolio-grid {
+    animation: grid-reveal 0.5s ease-out forwards;
+}
+
+.portfolio-item img {
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1) rotate(1deg);
+}
+
+.portfolio-item .bg-green-500,
+.portfolio-item .bg-blue-500 {
+    animation: status-pulse 2s ease-in-out infinite;
+}
+
+.portfolio-item span[class*="bg-"] {
+    transition: all 0.3s ease;
+}
+
+.portfolio-item span[class*="bg-"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-item .text-2xl {
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .text-2xl {
+    transform: translateX(5px) scale(1.2);
+}
+
+.portfolio-item[data-category*="web"]:hover {
+    animation: pulse-glow 2s infinite;
+}
+
+.portfolio-item.hide {
+    animation: hide-item 0.5s forwards;
+}
+
+.portfolio-item.show {
+    animation: show-item 0.5s forwards;
+}
+
+.portfolio-item::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #b820e6, 
+        #da7d20, 
+        #b820e6, 
+        #da7d20);
+    background-size: 400% 400%;
+    border-radius: 24px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: gradient-flow 3s ease infinite;
+}
+
+.portfolio-item:hover::before {
+    opacity: 1;
+}
+
+.view-more-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.view-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.view-more-btn:hover::before {
+    left: 100%;
+}
+
+.stats-card {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.stats-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== ANIMATION DELAYS ===== */
+.delay-100 { animation-delay: 0.1s !important; }
+.delay-200 { animation-delay: 0.2s !important; }
+.delay-300 { animation-delay: 0.3s !important; }
+.delay-400 { animation-delay: 0.4s !important; }
+.delay-500 { animation-delay: 0.5s !important; }
+.delay-600 { animation-delay: 0.6s !important; }
+.delay-700 { animation-delay: 0.7s !important; }
+.delay-800 { animation-delay: 0.8s !important; }
+.delay-900 { animation-delay: 0.9s !important; }
+.delay-1000 { animation-delay: 1s !important; }
+
+.portfolio-item:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-item:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-item:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-item:nth-child(4) { animation-delay: 0.4s; }
+.portfolio-item:nth-child(5) { animation-delay: 0.5s; }
+.portfolio-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* ===== ACCESSIBILITY ===== */
+.portfolio-item:focus-within {
+    outline: 2px solid #b820e6;
+    outline-offset: 4px;
+    border-radius: 24px;
+}
+
+.filter-btn:focus {
+    outline: 2px solid #b820e6;
+    outline-offset: 2px;
+}
+
+/* ===== DARK MODE ADJUSTMENTS ===== */
+.dark .portfolio-item {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark .portfolio-item:hover {
+    box-shadow: 0 20px 50px rgba(184, 32, 230, 0.2);
+}
+
+.dark .filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dark .filter-btn.active {
+    background: linear-gradient(45deg, #6b21a8, #ea580c);
+}
+
+.dark .portfolio-item img {
+    background: linear-gradient(90deg, #2a2a2a 25%, #333333 50%, #2a2a2a 75%);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .portfolio-item {
+        margin-bottom: 1rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .blob {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .portfolio-split-container {
+        flex-direction: column;
+    }
+    
+    .portfolio-sidebar {
+        position: static;
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .filter-btn {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* ===== SMOOTH TRANSITIONS FOR ALL ELEMENTS ===== */
+* {
+    transition: background-color 0.3s ease,
+                border-color 0.3s ease,
+                color 0.3s ease;
+}
+
+/* ===== CUSTOM UTILITIES ===== */
+.backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.transform-style-3d {
+    transform-style: preserve-3d;
+}
+
+/* ===== PROGRESS BAR ===== */
+#progressBar {
+    z-index: 9999;
+}
+
+/* ===== FORM STYLES ===== */
+input, textarea {
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    transform: translateY(-2px);
+}
+
+/* ===== BUTTON TRANSITIONS ===== */
+button, a {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+button:hover, a:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== FOOTER SPECIFIC STYLES ===== */
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.social-btn:hover i {
+    transform: scale(1.2);
+}
+
+.newsletter-form input:focus {
+    box-shadow: 0 0 0 3px rgba(184, 32, 230, 0.1);
+}
+
+/* Stats Counter Animation */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stats-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.7s ease;
+}
+
+.stats-card:hover::before {
+    left: 100%;
+}
+
+/* Back to Top Animation */
+@keyframes bounce-arrow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.back-to-top:hover i {
+    animation: bounce-arrow 1s infinite;
+}
+
+/* Footer Links Hover Effect */
+.footer-link {
+    position: relative;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #b820e6, #da7d20);
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* Gradient Border Animation for Stats */
+@keyframes gradient-border {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.stats-card {
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)) padding-box,
+                linear-gradient(135deg, rgba(184, 32, 230, 0.2), rgba(218, 125, 32, 0.2)) border-box;
+    background-size: 200% 200%;
+    animation: gradient-border 3s ease infinite;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .social-btn span {
+        display: none;
+    }
+    
+    .social-btn {
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        justify-content: center;
+    }
+    
+    .stats-card {
+        padding: 15px 10px;
+    }
+    
+    .stats-card .text-2xl {
+        font-size: 1.5rem;
+    }
+}
+
+/* Dark Mode Footer Adjustments */
+.dark footer {
+    background: linear-gradient(135deg, #0a0018 0%, #1a0035 50%, #0a0018 100%);
+}
+
+/* Newsletter Success Animation */
+@keyframes newsletter-success {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.newsletter-success {
+    animation: newsletter-success 0.5s ease forwards;
+}
+
+/* Social Media Icons Hover Colors */
+.fa-linkedin-in:hover {
+    color: #0077b5;
+}
+
+.fa-dribbble:hover {
+    color: #ea4c89;
+}
+
+.fa-behance:hover {
+    color: #0057ff;
+}
+
+.fa-github:hover {
+    color: #ffffff;
+}
+
+/* Pulse Animation for Important Elements */
+@keyframes important-pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(184, 32, 230, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(184, 32, 230, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(184, 32, 230, 0);
+    }
+}
+
+.highlight-pulse {
+    animation: important-pulse 2s infinite;
+}
+</style>
+
+    <!-- ===== FONTS & ICONS ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Ovo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="font-Outfit leading-8 bg-white dark:bg-darkTheme dark:text-white relative">
+    <!-- ===== BACKGROUND BLOBS ===== -->
+    <div class="blob-container fixed inset-0 overflow-hidden pointer-events-none -z-10">
+        <div class="blob top-1/4 left-1/4 animate-blob"></div>
+        <div class="blob top-1/2 right-1/4 animate-blob animation-delay-2000"></div>
+        <div class="blob bottom-1/4 left-1/2 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- ===== PROGRESS BAR ===== -->
+    <div id="progressBar" class="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary z-50 transform scale-x-0 origin-left transition-transform duration-300"></div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar" class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-40 transition-all duration-500">
+        <div class="flex items-center gap-2">
+            <a href="#home" class="text-2xl font-bold gradient-text">
+                <span class="hidden sm:inline">Muhammad Yousaf</span>
+                <span class="sm:hidden">MY</span>
+            </a>
+            <span class="px-2 py-1 text-xs bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full font-medium animate-pulse-glow">
+                UI/UX Designer
+            </span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-8 py-3 bg-white/80 backdrop-blur-sm shadow-lg dark:bg-darkHover/80 dark:backdrop-blur-sm">
+            <li><a href="#home" class="nav-link hover:text-primary dark:hover:text-secondary transition-colors duration-300">Home</a></li>
+            <li><a href="#about" class="nav-link hover:text-primary dark:hover:text-secondary transition-colors duration-300">About</a></li>
+            <li><a href="#portfolio" class="nav-link hover:text-primary dark:hover:text-secondary transition-colors duration-300">Portfolio</a></li>
+            <li><a href="#video" class="nav-link hover:text-primary dark:hover:text-secondary transition-colors duration-300">Video</a></li>
+            <li><a href="#hire" class="nav-link hover:text-primary dark:hover:text-secondary transition-colors duration-300">Hire Me</a></li>
+            <li><a href="#contact" class="nav-link hover:text-primary dark:hover:text-secondary transition-colors duration-300">Contact</a></li>
+        </ul>
+
+        <!-- Theme & Contact -->
+        <div class="flex items-center gap-4">
+            <button id="themeToggle" class="p-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg dark:bg-darkHover/80 hover:scale-110 transition-transform">
+                <i class="fas fa-moon text-gray-700 dark:text-yellow-300 dark:hidden"></i>
+                <i class="fas fa-sun text-yellow-500 hidden dark:inline"></i>
+            </button>
+
+            <a href="#contact" class="hidden lg:flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
+                Contact <i class="fas fa-arrow-right text-sm"></i>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuButton" class="md:hidden p-2 rounded-lg bg-white/80 backdrop-blur-sm shadow-lg dark:bg-darkHover/80">
+                <i class="fas fa-bars text-gray-700 dark:text-white"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white dark:bg-darkHover z-50 shadow-2xl p-6">
+        <div class="flex justify-between items-center mb-10">
+            <h3 class="text-xl font-bold gradient-text">Menu</h3>
+            <button id="closeMobileMenu" class="p-2 rounded-full bg-gray-100 dark:bg-darkTheme">
+                <i class="fas fa-times text-gray-700 dark:text-white"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col gap-6">
+            <li><a href="#home" class="text-lg font-medium hover:text-primary dark:hover:text-secondary transition-colors py-2 border-b border-gray-100 dark:border-gray-800">Home</a></li>
+            <li><a href="#about" class="text-lg font-medium hover:text-primary dark:hover:text-secondary transition-colors py-2 border-b border-gray-100 dark:border-gray-800">About</a></li>
+            <li><a href="#portfolio" class="text-lg font-medium hover:text-primary dark:hover:text-secondary transition-colors py-2 border-b border-gray-100 dark:border-gray-800">Portfolio</a></li>
+            <li><a href="#video" class="text-lg font-medium hover:text-primary dark:hover:text-secondary transition-colors py-2 border-b border-gray-100 dark:border-gray-800">Video</a></li>
+            <li><a href="#hire" class="text-lg font-medium hover:text-primary dark:hover:text-secondary transition-colors py-2 border-b border-gray-100 dark:border-gray-800">Hire Me</a></li>
+            <li><a href="#contact" class="text-lg font-medium hover:text-primary dark:hover:text-secondary transition-colors py-2 border-b border-gray-100 dark:border-gray-800">Contact</a></li>
+        </ul>
+        <div class="absolute bottom-6 left-6 right-6">
+            <a href="#contact" class="w-full flex items-center justify-center gap-2 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-xl transition-all">
+                Contact Now <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+
+    <!-- ===== HOME SECTION ===== -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center px-4 py-20 relative overflow-hidden">
+        <div class="text-center max-w-4xl mx-auto animate-on-scroll">
+            <!-- Animated Profile Image -->
+            <div class="relative mb-8 mx-auto w-40 h-40">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full animate-pulse-glow blur-xl opacity-50"></div>
+                <img src="./assets/profile-img.png" alt="Muhammad Yousaf - UI/UX Designer from Pakistan" 
+                     class="w-full h-full rounded-full object-cover relative z-10 animate-morph border-4 border-white dark:border-darkHover shadow-2xl">
+                <div class="absolute -inset-4 border-2 border-dashed border-primary/30 rounded-full animate-spin-slow"></div>
+            </div>
+
+            <!-- Greeting -->
+            <h3 class="flex items-center justify-center gap-2 text-xl md:text-2xl mb-4 font-Ovo animate-slide-down">
+                Hi! I'm Muhammad Yousaf
+                <span class="inline-block animate-bounce">
+                    <i class="fas fa-hand-wave text-secondary"></i>
+                </span>
+            </h3>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-Ovo font-bold mb-6 gradient-text animate-slide-up">
+                UI/UX Designer &<br>Digital Experience Creator
+            </h1>
+
+            <!-- Description -->
+            <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300 mb-10 font-Ovo animate-fade-in delay-300">
+                I design intuitive, beautiful digital experiences that solve real problems. With over 1 year of professional experience, I specialize in creating user-centered interfaces that delight and engage.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up delay-500">
+                <a href="#portfolio" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-medium flex items-center gap-3 hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
+                    View My Work <i class="fas fa-arrow-right animate-pulse"></i>
+                </a>
+                <a href="https://drive.google.com/uc?export=download&id=1m1eKjX3PmcPcLoZwITOIS1SW-ZoTGtkm" download 
+                   class="px-8 py-3.5 rounded-full border-2 border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-secondary bg-white dark:bg-darkHover font-medium flex items-center gap-3 hover:scale-105 transition-all duration-300 glow-border">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="mt-20 animate-bounce">
+                <a href="#about" class="flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-secondary transition-colors">
+                    <span class="text-sm">Scroll to explore</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="py-20 px-4 lg:px-[8%] scroll-mt-20">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-on-scroll">
+                <h4 class="text-lg font-Ovo text-primary dark:text-secondary mb-2">Get to know me</h4>
+                <h2 class="text-4xl md:text-5xl font-Ovo font-bold mb-4">About Me</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 font-Ovo">
+                    Passionate UI/UX designer dedicated to creating meaningful digital experiences
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Column - Image & Stats -->
+                <div class="animate-on-scroll">
+                    <div class="relative">
+                        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./assets/Photo-main.jpg" alt="Muhammad Yousaf working as UI/UX Designer" 
+                                 class="w-full h-auto object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                        </div>
+                        
+                        <!-- Floating Experience Card -->
+                        <div class="absolute -bottom-6 -right-6 bg-white dark:bg-darkHover rounded-2xl p-6 shadow-2xl animate-float-slow">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold gradient-text mb-1">1+</div>
+                                <div class="text-sm font-medium text-gray-600 dark:text-gray-300">Years Experience</div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Tools Card -->
+                        <div class="absolute -top-6 -left-6 bg-white dark:bg-darkHover rounded-2xl p-4 shadow-2xl animate-float-slow animation-delay-2000">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center">
+                                    <i class="fas fa-palette text-primary"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold">10+ Tools</div>
+                                    <div class="text-xs text-gray-500">Mastered</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Content -->
+                <div class="animate-on-scroll delay-300">
+                    <h3 class="text-3xl font-Ovo font-bold mb-6">Crafting Digital Experiences with Purpose</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 font-Ovo">
+                        I am a UI/UX Designer based in Pakistan with over a year of professional experience. My journey in design began with a passion for solving problems through beautiful, functional interfaces. I believe good design is invisible—it works so seamlessly that users don't even notice it.
+                    </p>
+                    
+                    <!-- Skills & Tools -->
+                    <div class="mb-8">
+                        <h4 class="text-xl font-semibold mb-4">My Design Toolkit</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary font-medium">Figma</span>
+                            <span class="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary font-medium">Adobe XD</span>
+                            <span class="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary font-medium">Illustrator</span>
+                            <span class="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary font-medium">Photoshop</span>
+                            <span class="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary font-medium">Sketch</span>
+                            <span class="px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 text-primary dark:text-secondary font-medium">InVision</span>
+                        </div>
+                    </div>
+
+                    <!-- Education & Experience -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="bg-white dark:bg-darkHover rounded-2xl p-6 shadow-lg hover-3d">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center mb-4">
+                                <i class="fas fa-graduation-cap text-primary"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2">Education</h4>
+                            <p class="text-gray-600 dark:text-gray-300">Bachelor's in <strong>Digital Design & Computer Arts</strong></p>
+                        </div>
+                        
+                        <div class="bg-white dark:bg-darkHover rounded-2xl p-6 shadow-lg hover-3d">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center mb-4">
+                                <i class="fas fa-briefcase text-primary"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold mb-2">Experience</h4>
+                            <p class="text-gray-600 dark:text-gray-300">1+ Year as <strong>UI/UX Designer</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VIDEO SECTION ===== -->
+    <section id="video" class="py-20 px-4 lg:px-[8%] scroll-mt-20 bg-gradient-to-b from-white to-gray-50 dark:from-darkTheme dark:to-darkHover/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h4 class="text-lg font-Ovo text-primary dark:text-secondary mb-2">MY DESIGN PROCESS</h4>
+                <h2 class="text-4xl md:text-5xl font-Ovo font-bold mb-4 gradient-text">Watch My Creative Journey</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 font-Ovo">
+                    See how I approach design challenges and transform ideas into beautiful digital experiences
+                </p>
+            </div>
+
+            <!-- Video Player with Hover Play Button -->
+            <div class="video-container animate-on-scroll">
+                <!-- YouTube Demo Video -->
+                <iframe id="youtubeVideo" class="w-full aspect-video" 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&modestbranding=1&rel=0" 
+                        title="My Design Process - Muhammad Yousaf" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+                
+                <!-- Single Play/Pause Button -->
+                <button id="videoPlayBtn" class="video-play-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+            </div>
+
+            <!-- Video Info -->
+            <div class="mt-12 grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-2xl bg-white/50 dark:bg-darkHover/50 backdrop-blur-sm hover-3d">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lightbulb text-primary text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Concept Development</h4>
+                    <p class="text-gray-600 dark:text-gray-300">Transforming ideas into actionable design concepts</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-2xl bg-white/50 dark:bg-darkHover/50 backdrop-blur-sm hover-3d">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-paint-brush text-primary text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">UI Design</h4>
+                    <p class="text-gray-600 dark:text-gray-300">Creating beautiful, functional interfaces</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-2xl bg-white/50 dark:bg-darkHover/50 backdrop-blur-sm hover-3d">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rocket text-primary text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Prototyping</h4>
+                    <p class="text-gray-600 dark:text-gray-300">Bringing designs to life with interactive prototypes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO SECTION (SPLIT LAYOUT) ===== -->
+    <section id="portfolio" class="py-20 px-4 lg:px-[8%] scroll-mt-20 bg-gradient-to-b from-white to-gray-50 dark:from-darkTheme dark:to-darkHover/30">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-on-scroll">
+                <h4 class="text-lg font-Ovo text-primary dark:text-secondary mb-2">MY CREATIVE WORK</h4>
+                <h2 class="text-4xl md:text-5xl font-Ovo font-bold mb-4 gradient-text">Design Portfolio</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 font-Ovo">
+                    Selected projects that showcase my design process, problem-solving skills, and attention to detail
+                </p>
+            </div>
+
+            <!-- Split Layout Portfolio -->
+            <div class="portfolio-split-container">
+                <!-- Left Sidebar - Categories -->
+                <div class="portfolio-sidebar animate-on-scroll">
+                    <h3 class="text-2xl font-bold mb-6 gradient-text">Categories</h3>
+                    <div class="space-y-2">
+                        <button class="category-btn active" data-category="all">
+                            <i class="fas fa-th-large"></i>
+                            <span>All Projects</span>
+                        </button>
+                        <button class="category-btn" data-category="ui-ux">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>UI/UX Design</span>
+                        </button>
+                        <button class="category-btn" data-category="web">
+                            <i class="fas fa-laptop"></i>
+                            <span>Web Design</span>
+                        </button>
+                        <button class="category-btn" data-category="mobile">
+                            <i class="fas fa-mobile"></i>
+                            <span>Mobile Apps</span>
+                        </button>
+                        <button class="category-btn" data-category="branding">
+                            <i class="fas fa-palette"></i>
+                            <span>Brand Identity</span>
+                        </button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+                        <h4 class="text-xl font-bold mb-4">Design Stats</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-600 dark:text-gray-300">Projects Completed</span>
+                                    <span class="font-bold text-primary">15+</span>
+                                </div>
+                                <div class="w-full h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="text-gray-600 dark:text-gray-300">Client Satisfaction</span>
+                                    <span class="font-bold text-primary">100%</span>
+                                </div>
+                                <div class="w-full h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - Projects -->
+                <div class="portfolio-content">
+                    <div class="portfolio-grid grid md:grid-cols-2 gap-8">
+                        <!-- Your Behance Projects -->
+                        <!-- Project 1 - Eco Nest -->
+                        <div class="portfolio-item animate-on-scroll delay-100" data-category="ui-ux web">
+                            <div class="group relative overflow-hidden rounded-3xl shadow-2xl hover-lift-3d">
+                                <div class="relative h-64 overflow-hidden bg-gradient-to-br from-emerald-400 to-teal-600">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fas fa-leaf text-6xl text-white opacity-80"></i>
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-white dark:bg-darkHover">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h3 class="text-xl font-bold">Eco Nest Website</h3>
+                                        <span class="px-3 py-1 text-xs bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200 rounded-full">Eco-Friendly</span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4">Sustainable living platform with intuitive navigation and eco-conscious design</p>
+                                    <a href="https://www.behance.net/gallery/236778673/Eco-Nest-Eco-Friendly-Website-UI-Design" 
+                                       target="_blank" class="text-primary dark:text-secondary font-medium hover:underline">
+                                        View on Behance <i class="fas fa-external-link-alt ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 - Finity -->
+                        <div class="portfolio-item animate-on-scroll delay-200" data-category="ui-ux mobile">
+                            <div class="group relative overflow-hidden rounded-3xl shadow-2xl hover-lift-3d">
+                                <div class="relative h-64 overflow-hidden bg-gradient-to-br from-blue-500 to-cyan-600">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fas fa-money-bill-wave text-6xl text-white opacity-80"></i>
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-white dark:bg-darkHover">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h3 class="text-xl font-bold">Finity Money Transfer</h3>
+                                        <span class="px-3 py-1 text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full">Fintech</span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4">Secure money transfer app with seamless user experience</p>
+                                    <a href="https://www.behance.net/gallery/232449049/Finity-Money-Transfer-app" 
+                                       target="_blank" class="text-primary dark:text-secondary font-medium hover:underline">
+                                        View on Behance <i class="fas fa-external-link-alt ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 - HabitPal -->
+                        <div class="portfolio-item animate-on-scroll delay-300" data-category="ui-ux mobile">
+                            <div class="group relative overflow-hidden rounded-3xl shadow-2xl hover-lift-3d">
+                                <div class="relative h-64 overflow-hidden bg-gradient-to-br from-purple-500 to-pink-600">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fas fa-tasks text-6xl text-white opacity-80"></i>
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-white dark:bg-darkHover">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h3 class="text-xl font-bold">HabitPal Tracker</h3>
+                                        <span class="px-3 py-1 text-xs bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 rounded-full">Productivity</span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4">Gamified habit tracking app with rewarding user journey</p>
+                                    <a href="https://www.behance.net/gallery/239347415/HabitPal-Gamified-Habit-Tracker-UIUX" 
+                                       target="_blank" class="text-primary dark:text-secondary font-medium hover:underline">
+                                        View on Behance <i class="fas fa-external-link-alt ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 4 - Food Delivery -->
+                        <div class="portfolio-item animate-on-scroll delay-400" data-category="ui-ux web mobile">
+                            <div class="group relative overflow-hidden rounded-3xl shadow-2xl hover-lift-3d">
+                                <div class="relative h-64 overflow-hidden bg-gradient-to-br from-red-500 to-orange-600">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fas fa-utensils text-6xl text-white opacity-80"></i>
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-white dark:bg-darkHover">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h3 class="text-xl font-bold">Food Delivery Platform</h3>
+                                        <span class="px-3 py-1 text-xs bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 rounded-full">Food Tech</span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4">Complete UX case study for food delivery service</p>
+                                    <a href="https://www.behance.net/gallery/239095215/Food-Delivery-Website-Case-study" 
+                                       target="_blank" class="text-primary dark:text-secondary font-medium hover:underline">
+                                        View on Behance <i class="fas fa-external-link-alt ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 5 - Chatbot AI -->
+                        <div class="portfolio-item animate-on-scroll delay-500" data-category="ui-ux web">
+                            <div class="group relative overflow-hidden rounded-3xl shadow-2xl hover-lift-3d">
+                                <div class="relative h-64 overflow-hidden bg-gradient-to-br from-indigo-500 to-purple-600">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fas fa-robot text-6xl text-white opacity-80"></i>
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-white dark:bg-darkHover">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h3 class="text-xl font-bold">AI Chatbot Interface</h3>
+                                        <span class="px-3 py-1 text-xs bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 rounded-full">AI/ML</span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4">Intelligent chatbot with natural conversation flow</p>
+                                    <a href="https://www.behance.net/gallery/231981935/Chatbot-Ai-Ui-Design" 
+                                       target="_blank" class="text-primary dark:text-secondary font-medium hover:underline">
+                                        View on Behance <i class="fas fa-external-link-alt ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 6 - Sneaker App -->
+                        <div class="portfolio-item animate-on-scroll delay-600" data-category="ui-ux mobile branding">
+                            <div class="group relative overflow-hidden rounded-3xl shadow-2xl hover-lift-3d">
+                                <div class="relative h-64 overflow-hidden bg-gradient-to-br from-amber-500 to-yellow-600">
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <i class="fas fa-shoe-prints text-6xl text-white opacity-80"></i>
+                                    </div>
+                                </div>
+                                <div class="p-6 bg-white dark:bg-darkHover">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <h3 class="text-xl font-bold">Sneaker E-Commerce App</h3>
+                                        <span class="px-3 py-1 text-xs bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 rounded-full">Fashion</span>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4">Premium sneaker shopping experience with AR features</p>
+                                    <a href="https://www.behance.net/gallery/216988603/Sneaker-App-Design" 
+                                       target="_blank" class="text-primary dark:text-secondary font-medium hover:underline">
+                                        View on Behance <i class="fas fa-external-link-alt ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- View More Button -->
+                    <div class="text-center mt-12 animate-on-scroll delay-700">
+                        <a href="https://behance.net/muhammadyousaf" target="_blank" 
+                           class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                            <i class="fab fa-behance"></i> View All Projects on Behance
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HIRE ME SECTION ===== -->
+    <section id="hire" class="py-20 px-4 lg:px-[8%] scroll-mt-20 bg-gradient-to-br from-gray-50 to-white dark:from-darkHover dark:to-darkTheme">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h4 class="text-lg font-Ovo text-primary dark:text-secondary mb-2">WORK WITH ME</h4>
+                <h2 class="text-4xl md:text-5xl font-Ovo font-bold mb-4">Hire Me For Your Next Project</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 font-Ovo">
+                    Available for freelance projects and collaborations. Let's create something amazing together.
+                </p>
+            </div>
+
+            <!-- Hiring Platforms -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Fiverr Card -->
+                <a href="https://fiverr.com/muhammadyousaf" target="_blank" 
+                   class="hire-card fiverr hover-3d animate-on-scroll">
+                    <div class="icon">
+                        <i class="fab fa-fiverr"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Fiverr Pro</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Premium UI/UX design services with fast delivery and unlimited revisions</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500">Starting from</span>
+                        <span class="text-xl font-bold gradient-text">$150+</span>
+                    </div>
+                </a>
+
+                <!-- Upwork Card -->
+                <a href="https://upwork.com/freelancers/~muhammadyousaf" target="_blank" 
+                   class="hire-card upwork hover-3d animate-on-scroll delay-200">
+                    <div class="icon">
+                        <i class="fab fa-upwork"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Upwork Top Rated</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Hourly and fixed-price contracts with 100% job success rate</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-500">Hourly Rate</span>
+                        <span class="text-xl font-bold gradient-text">$45+/hr</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Direct Contact CTA -->
+            <div class="text-center mt-12 animate-on-scroll delay-400">
+                <div class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold mb-4">Prefer Direct Contact?</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        For custom projects, retainer agreements, or design consultation, contact me directly.
+                    </p>
+                    <a href="#contact" 
+                       class="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-envelope"></i> Send Direct Inquiry
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="py-20 px-4 lg:px-[8%] bg-gradient-to-br from-gray-50 to-white dark:from-darkHover dark:to-darkTheme scroll-mt-20">
+        <div class="max-w-4xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16 animate-on-scroll">
+                <h4 class="text-lg font-Ovo text-primary dark:text-secondary mb-2">Let's connect</h4>
+                <h2 class="text-4xl md:text-5xl font-Ovo font-bold mb-4">Get In Touch</h2>
+                <p class="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 font-Ovo">
+                    Have a project in mind? Let's discuss how we can create something amazing together.
+                </p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white dark:bg-darkHover rounded-3xl p-8 shadow-2xl animate-on-scroll">
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Your Name *</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary transition-all"
+                                   placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Email Address *</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary transition-all"
+                                   placeholder="Enter your email">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Project Type</label>
+                        <select id="subject" name="subject" 
+                               class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary transition-all">
+                            <option value="">Select project type</option>
+                            <option value="ui-ux">UI/UX Design</option>
+                            <option value="web-design">Web Design</option>
+                            <option value="mobile-app">Mobile App Design</option>
+                            <option value="branding">Brand Identity</option>
+                            <option value="consultation">Design Consultation</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2 font-medium">Project Details *</label>
+                        <textarea id="message" name="message" rows="5" required 
+                                  class="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-secondary transition-all"
+                                  placeholder="Tell me about your project, timeline, and budget..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" id="submitBtn" 
+                                class="px-10 py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-pulse-glow">
+                            <span id="submitText">Send Message</span>
+                            <span id="submitSpinner" class="hidden">
+                                <i class="fas fa-spinner fa-spin ml-2"></i>
+                            </span>
+                        </button>
+                        <p id="formMessage" class="mt-4 text-sm text-gray-600 dark:text-gray-400"></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+                <div class="text-center p-6 bg-white dark:bg-darkHover rounded-2xl shadow-lg hover-3d animate-on-scroll">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-primary"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Email</h4>
+                    <a href="mailto:freelanceryousaf69@gmail.com" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">
+                        freelanceryousaf69@gmail.com
+                    </a>
+                </div>
+                <div class="text-center p-6 bg-white dark:bg-darkHover rounded-2xl shadow-lg hover-3d animate-on-scroll delay-200">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone-alt text-primary"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Phone/WhatsApp</h4>
+                    <a href="https://wa.me/923295646552" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors">
+                        +92 329 5646552
+                    </a>
+                </div>
+                <div class="text-center p-6 bg-white dark:bg-darkHover rounded-2xl shadow-lg hover-3d animate-on-scroll delay-400">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-primary"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">Location</h4>
+                    <p class="text-gray-600 dark:text-gray-300">Pakistan • Available Worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black dark:from-darkTheme dark:via-darkHover dark:to-black pt-20 pb-10 px-4">
+        <!-- Animated Background -->
+        <div class="absolute inset-0 overflow-hidden opacity-10">
+            <div class="absolute -top-40 -left-40 w-80 h-80 bg-primary rounded-full blur-3xl animate-pulse-glow"></div>
+            <div class="absolute -bottom-40 -right-40 w-80 h-80 bg-secondary rounded-full blur-3xl animate-pulse-glow animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl opacity-20 animate-blob"></div>
+        </div>
+
+        <!-- Footer Content -->
+        <div class="relative z-10 max-w-7xl mx-auto">
+            <!-- Main Footer -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand Column -->
+                <div class="animate-on-scroll">
+                    <a href="#home" class="inline-block mb-6">
+                        <span class="text-3xl font-bold gradient-text">Muhammad Yousaf</span>
+                        <span class="block text-sm text-gray-400 mt-1">UI/UX Designer</span>
+                    </a>
+                    <p class="text-gray-300 mb-6 max-w-xs">
+                        Creating beautiful, functional digital experiences that solve real problems and delight users.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center animate-pulse-glow">
+                            <i class="fas fa-palette text-white"></i>
+                        </div>
+                        <div>
+                            <div class="text-white font-medium">Design with Purpose</div>
+                            <div class="text-gray-400 text-sm">Since 2023</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="animate-on-scroll delay-200">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="w-8 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></span>
+                        Quick Links
+                    </h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#home" class="flex items-center gap-2 text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 group">
+                                <span class="w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" class="flex items-center gap-2 text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 group">
+                                <span class="w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                Portfolio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#video" class="flex items-center gap-2 text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 group">
+                                <span class="w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                Video
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#hire" class="flex items-center gap-2 text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 group">
+                                <span class="w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                Hire Me
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="flex items-center gap-2 text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 group">
+                                <span class="w-2 h-2 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="animate-on-scroll delay-300">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="w-8 h-1 bg-gradient-to-r from-secondary to-primary rounded-full"></span>
+                        Services
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-2 text-gray-300 group">
+                            <i class="fas fa-arrow-right text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            <span>UI/UX Design</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-300 group">
+                            <i class="fas fa-arrow-right text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            <span>Web Design</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-300 group">
+                            <i class="fas fa-arrow-right text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            <span>Mobile App Design</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-300 group">
+                            <i class="fas fa-arrow-right text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            <span>Brand Identity</span>
+                        </li>
+                        <li class="flex items-center gap-2 text-gray-300 group">
+                            <i class="fas fa-arrow-right text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            <span>UX Research</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="animate-on-scroll delay-400">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="w-8 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></span>
+                        Get In Touch
+                    </h3>
+                    <div class="space-y-4">
+                        <a href="mailto:freelanceryousaf69@gmail.com" 
+                           class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                            <div class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center group-hover:bg-primary transition-colors">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-400">Email</div>
+                                <div class="font-medium">freelanceryousaf69@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/923295646552" target="_blank" 
+                           class="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                            <div class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center group-hover:bg-secondary transition-colors">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-400">Phone/WhatsApp</div>
+                                <div class="font-medium">+92 329 5646552</div>
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-3 text-gray-300">
+                            <div class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-400">Location</div>
+                                <div class="font-medium">Pakistan</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links & Newsletter -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 py-10 border-t border-gray-800">
+                <!-- Social Links -->
+                <div class="animate-on-scroll delay-500">
+                    <h4 class="text-lg font-bold text-white mb-4">Let's Connect</h4>
+                    <p class="text-gray-400 mb-6">Follow me on social media for design insights and updates</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://behance.net/muhammadyousaf" target="_blank" 
+                           class="social-btn group relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                            <i class="fab fa-behance relative z-10"></i>
+                            <span class="relative z-10 ml-2">Behance</span>
+                        </a>
+                        <a href="https://dribbble.com/muhammadyousaf" target="_blank" 
+                           class="social-btn group relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-red-500 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                            <i class="fab fa-dribbble relative z-10"></i>
+                            <span class="relative z-10 ml-2">Dribbble</span>
+                        </a>
+                        <a href="https://linkedin.com/in/muhammadyousaf" target="_blank" 
+                           class="social-btn group relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                            <i class="fab fa-linkedin-in relative z-10"></i>
+                            <span class="relative z-10 ml-2">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/muhammadyousaf" target="_blank" 
+                           class="social-btn group relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-gray-700 to-gray-900 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                            <i class="fab fa-github relative z-10"></i>
+                            <span class="relative z-10 ml-2">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="animate-on-scroll delay-600">
+                    <h4 class="text-lg font-bold text-white mb-4">Stay Updated</h4>
+                    <p class="text-gray-400 mb-6">Get design tips and project updates in your inbox</p>
+                    <form class="newsletter-form">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" 
+                                   placeholder="Your email address" 
+                                   required
+                                   class="flex-1 px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors">
+                            <button type="submit" 
+                                    class="px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 animate-pulse-glow">
+                                Subscribe
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-3">No spam, just valuable content. Unsubscribe anytime.</p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright & Bottom Bar -->
+            <div class="pt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <!-- Copyright -->
+                    <div class="text-center md:text-left">
+                        <p class="text-gray-400">
+                            &copy; <span class="current-year">2024</span> Muhammad Yousaf. All rights reserved.
+                        </p>
+                        <p class="text-gray-500 text-sm mt-1">
+                            Crafted with <i class="fas fa-heart text-red-500 mx-1 animate-pulse"></i> and <i class="fas fa-coffee text-yellow-500 mx-1"></i>
+                        </p>
+                    </div>
+
+                    <!-- Back to Top -->
+                    <button onclick="scrollToTop()" 
+                            class="group flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                        <span>Back to Top</span>
+                        <div class="w-8 h-8 rounded-full border border-gray-700 group-hover:border-primary flex items-center justify-center group-hover:bg-primary/10 transition-all">
+                            <i class="fas fa-arrow-up group-hover:translate-y-[-2px] transition-transform"></i>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Stats Bar -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                    <div class="text-center p-4 rounded-lg bg-gray-800/50 backdrop-blur-sm stats-card">
+                        <div class="text-2xl font-bold gradient-text">15+</div>
+                        <div class="text-gray-400 text-sm">Projects</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-gray-800/50 backdrop-blur-sm stats-card">
+                        <div class="text-2xl font-bold gradient-text">10+</div>
+                        <div class="text-gray-400 text-sm">Happy Clients</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-gray-800/50 backdrop-blur-sm stats-card">
+                        <div class="text-2xl font-bold gradient-text">98%</div>
+                        <div class="text-gray-400 text-sm">Satisfaction</div>
+                    </div>
+                    <div class="text-center p-4 rounded-lg bg-gray-800/50 backdrop-blur-sm stats-card">
+                        <div class="text-2xl font-bold gradient-text">24/7</div>
+                        <div class="text-gray-400 text-sm">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Design Elements -->
+        <div class="absolute bottom-10 right-10 w-20 h-20 rounded-full bg-gradient-to-r from-primary/10 to-secondary/10 blur-xl animate-float-slow"></div>
+        <div class="absolute top-10 left-10 w-16 h-16 rounded-full bg-gradient-to-r from-secondary/10 to-primary/10 blur-xl animate-float animation-delay-2000"></div>
+    </footer>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="backToTop" 
+            class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary to-secondary text-white rounded-full shadow-2xl opacity-0 transform translate-y-10 transition-all duration-300 hover:scale-110 z-40 flex items-center justify-center">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== DOM READY =====
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all functions
+            initTheme();
+            initMobileMenu();
+            initBackToTop();
+            initContactForm();
+            initScrollAnimations();
+            initPortfolioFilter();
+            initSmoothScrolling();
+            initTooltips();
+            initFooter();
+            initVideoPlayer();
+            updateCopyrightYear();
+        });
+
+        // ===== THEME TOGGLE =====
+        function initTheme() {
+            const themeToggle = document.getElementById('themeToggle');
+            
+            // Check for saved theme or system preference
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+            
+            // Toggle theme on button click
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    document.documentElement.classList.toggle('dark');
+                    
+                    // Update localStorage
+                    if (document.documentElement.classList.contains('dark')) {
+                        localStorage.theme = 'dark';
+                    } else {
+                        localStorage.theme = 'light';
+                    }
+                    
+                    // Add animation to button
+                    this.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            }
+        }
+
+        // ===== VIDEO PLAYER CONTROLS =====
+        function initVideoPlayer() {
+            const videoPlayBtn = document.getElementById('videoPlayBtn');
+            const youtubeVideo = document.getElementById('youtubeVideo');
+            
+            if (!videoPlayBtn || !youtubeVideo) return;
+            
+            let isPlaying = false;
+            
+            videoPlayBtn.addEventListener('click', function() {
+                const iframe = youtubeVideo.contentWindow;
+                
+                if (isPlaying) {
+                    // Pause video
+                    iframe.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                    this.innerHTML = '<i class="fas fa-play"></i>';
+                    this.classList.remove('playing');
+                } else {
+                    // Play video
+                    iframe.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                    this.innerHTML = '<i class="fas fa-pause"></i>';
+                    this.classList.add('playing');
+                    this.style.opacity = '1';
+                }
+                
+                isPlaying = !isPlaying;
+            });
+            
+            // Show play button when hovering video container
+            const videoContainer = document.querySelector('.video-container');
+            videoContainer.addEventListener('mouseenter', function() {
+                videoPlayBtn.style.opacity = '1';
+                videoPlayBtn.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
+            
+            videoContainer.addEventListener('mouseleave', function() {
+                if (!isPlaying) {
+                    videoPlayBtn.style.opacity = '0';
+                    videoPlayBtn.style.transform = 'translate(-50%, -50%) scale(0.8)';
+                }
+            });
+            
+            // Listen for YouTube player state changes
+            window.addEventListener('message', function(event) {
+                if (event.origin !== 'https://www.youtube.com') return;
+                
+                try {
+                    const data = JSON.parse(event.data);
+                    if (data.event === 'onStateChange') {
+                        if (data.info === 1) { // Playing
+                            isPlaying = true;
+                            videoPlayBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                            videoPlayBtn.classList.add('playing');
+                        } else if (data.info === 2) { // Paused
+                            isPlaying = false;
+                            videoPlayBtn.innerHTML = '<i class="fas fa-play"></i>';
+                            videoPlayBtn.classList.remove('playing');
+                        }
+                    }
+                } catch (e) {
+                    // Ignore parsing errors
+                }
+            });
+        }
+
+        // ===== PORTFOLIO FILTER (SPLIT LAYOUT) =====
+        function initPortfolioFilter() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const category = this.dataset.category;
+                    
+                    // Filter portfolio items
+                    portfolioItems.forEach(item => {
+                        const itemCategories = item.dataset.category;
+                        
+                        if (category === 'all' || itemCategories.includes(category)) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0) scale(1)';
+                            }, 100);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px) scale(0.95)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        }
+
+        // ===== MOBILE MENU =====
+        function initMobileMenu() {
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const closeMobileMenu = document.getElementById('closeMobileMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+            
+            if (!mobileMenuButton || !mobileMenu) return;
+            
+            function openMobileMenu() {
+                mobileMenu.classList.add('open');
+                mobileMenuOverlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                
+                // Add animation to menu items
+                const menuItems = mobileMenu.querySelectorAll('a');
+                menuItems.forEach((item, index) => {
+                    item.style.animationDelay = `${index * 0.1}s`;
+                    item.classList.add('animate-slide-left');
+                });
+            }
+            
+            function closeMobileMenuFunc() {
+                mobileMenu.classList.remove('open');
+                mobileMenuOverlay.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+            
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+            closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+            mobileMenuOverlay.addEventListener('click', closeMobileMenuFunc);
+            
+            // Close menu when clicking on links
+            document.querySelectorAll('#mobileMenu a').forEach(link => {
+                link.addEventListener('click', closeMobileMenuFunc);
+            });
+        }
+
+        // ===== BACK TO TOP BUTTON =====
+        function initBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+            if (!backToTop) return;
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Add click animation
+                this.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        }
+
+        // ===== CONTACT FORM =====
+        function initContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            if (!contactForm) return;
+            
+            const submitBtn = contactForm.querySelector('#submitBtn');
+            const submitText = contactForm.querySelector('#submitText');
+            const submitSpinner = contactForm.querySelector('#submitSpinner');
+            const formMessage = contactForm.querySelector('#formMessage');
+            
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // Validate form
+                if (!data.name || !data.email || !data.message) {
+                    showFormMessage('Please fill in all required fields.', 'error');
+                    return;
+                }
+                
+                if (!isValidEmail(data.email)) {
+                    showFormMessage('Please enter a valid email address.', 'error');
+                    return;
+                }
+                
+                // Show loading state
+                showLoadingState();
+                
+                try {
+                    // Simulate API call (replace with actual API endpoint)
+                    await simulateApiCall(data);
+                    
+                    // Show success state
+                    showSuccessState();
+                    
+                    // Reset form
+                    setTimeout(() => {
+                        contactForm.reset();
+                        resetFormState();
+                    }, 3000);
+                    
+                } catch (error) {
+                    showFormMessage('Something went wrong. Please try again.', 'error');
+                    resetFormState();
+                }
+            });
+            
+            function showLoadingState() {
+                submitText.textContent = 'Sending...';
+                submitSpinner.classList.remove('hidden');
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-75');
+            }
+            
+            function showSuccessState() {
+                submitText.textContent = 'Message Sent!';
+                submitSpinner.classList.add('hidden');
+                submitBtn.classList.remove('bg-gradient-to-r', 'from-primary', 'to-secondary');
+                submitBtn.classList.add('bg-green-500');
+                showFormMessage('Thank you! I\'ll get back to you within 24 hours.', 'success');
+                
+                // Add celebration animation
+                submitBtn.classList.add('animate-pulse');
+            }
+            
+            function resetFormState() {
+                setTimeout(() => {
+                    submitText.textContent = 'Send Message';
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-75', 'bg-green-500', 'animate-pulse');
+                    submitBtn.classList.add('bg-gradient-to-r', 'from-primary', 'to-secondary');
+                    formMessage.textContent = '';
+                    formMessage.className = 'mt-4 text-center text-sm';
+                }, 3000);
+            }
+            
+            function showFormMessage(message, type) {
+                formMessage.textContent = message;
+                formMessage.className = `mt-4 text-center text-sm ${type === 'error' ? 'text-red-500' : 'text-green-500'}`;
+                
+                // Animate message
+                formMessage.classList.add('animate-slide-up');
+                setTimeout(() => {
+                    formMessage.classList.remove('animate-slide-up');
+                }, 700);
+            }
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+            
+            async function simulateApiCall(data) {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        console.log('Form submitted:', data);
+                        resolve({ success: true });
+                    }, 1500);
+                });
+            }
+        }
+
+        // ===== SCROLL ANIMATIONS =====
+        function initScrollAnimations() {
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        
+                        // Add stagger effect for child elements
+                        const staggerChildren = entry.target.querySelectorAll('.stagger-child > *');
+                        staggerChildren.forEach((child, index) => {
+                            child.style.animationDelay = `${index * 0.1}s`;
+                            child.classList.add('animate-slide-up');
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Progress Bar
+            const progressBar = document.getElementById('progressBar');
+            const backToTop = document.getElementById('backToTop');
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', function() {
+                // Progress Bar
+                if (progressBar) {
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrolled = (winScroll / height) * 100;
+                    progressBar.style.transform = `scaleX(${scrolled / 100})`;
+                }
+                
+                // Back to Top Button
+                if (backToTop) {
+                    if (window.scrollY > 500) {
+                        backToTop.classList.remove('opacity-0', 'translate-y-10');
+                        backToTop.classList.add('opacity-100', 'translate-y-0');
+                    } else {
+                        backToTop.classList.remove('opacity-100', 'translate-y-0');
+                        backToTop.classList.add('opacity-0', 'translate-y-10');
+                    }
+                }
+                
+                // Navbar Background
+                if (navbar) {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('bg-white/90', 'dark:bg-darkHover/90', 'backdrop-blur-lg', 'shadow-lg');
+                    } else {
+                        navbar.classList.remove('bg-white/90', 'dark:bg-darkHover/90', 'backdrop-blur-lg', 'shadow-lg');
+                    }
+                }
+                
+                // Active Nav Link
+                setActiveNavLink();
+            });
+        }
+
+        // ===== SMOOTH SCROLLING =====
+        function initSmoothScrolling() {
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    // Skip if it's just "#"
+                    if (href === '#') return;
+                    
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        
+                        // Close mobile menu if open
+                        const mobileMenu = document.getElementById('mobileMenu');
+                        if (mobileMenu && mobileMenu.classList.contains('open')) {
+                            mobileMenu.classList.remove('open');
+                            document.getElementById('mobileMenuOverlay').classList.add('hidden');
+                            document.body.style.overflow = 'auto';
+                        }
+                        
+                        // Smooth scroll to target
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Update URL without page jump
+                        history.pushState(null, null, href);
+                    }
+                });
+            });
+        }
+
+        // ===== TOOLTIPS =====
+        function initTooltips() {
+            const tooltipElements = document.querySelectorAll('[data-tooltip]');
+            
+            tooltipElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    const tooltipText = this.getAttribute('data-tooltip');
+                    const tooltip = document.createElement('div');
+                    tooltip.className = 'tooltip-text';
+                    tooltip.textContent = tooltipText;
+                    this.appendChild(tooltip);
+                    
+                    // Position tooltip
+                    setTimeout(() => {
+                        tooltip.style.visibility = 'visible';
+                        tooltip.style.opacity = '1';
+                    }, 10);
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    const tooltip = this.querySelector('.tooltip-text');
+                    if (tooltip) {
+                        tooltip.style.opacity = '0';
+                        setTimeout(() => {
+                            tooltip.remove();
+                        }, 300);
+                    }
+                });
+            });
+        }
+
+        // ===== ACTIVE NAV LINK =====
+        function setActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-primary', 'dark:text-secondary', 'font-semibold', 'border-b-2', 'border-primary', 'dark:border-secondary');
+                const href = link.getAttribute('href');
+                
+                if (href === `#${current}` || (current === '' && href === '#home')) {
+                    link.classList.add('text-primary', 'dark:text-secondary', 'font-semibold', 'border-b-2', 'border-primary', 'dark:border-secondary');
+                }
+            });
+        }
+
+        // ===== FOOTER FUNCTIONALITY =====
+        function initFooter() {
+            // Newsletter Form
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const emailInput = this.querySelector('input[type="email"]');
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    
+                    if (emailInput.value) {
+                        // Show loading state
+                        const originalText = submitBtn.textContent;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                        submitBtn.disabled = true;
+                        
+                        // Simulate API call
+                        setTimeout(() => {
+                            // Show success state
+                            submitBtn.innerHTML = '<i class="fas fa-check"></i> Subscribed!';
+                            submitBtn.classList.remove('bg-gradient-to-r', 'from-primary', 'to-secondary');
+                            submitBtn.classList.add('bg-green-600');
+                            
+                            // Show success message
+                            const successMsg = document.createElement('p');
+                            successMsg.className = 'newsletter-success text-green-400 text-sm mt-2';
+                            successMsg.textContent = 'Thank you for subscribing!';
+                            this.appendChild(successMsg);
+                            
+                            // Reset form
+                            emailInput.value = '';
+                            
+                            // Reset button after 3 seconds
+                            setTimeout(() => {
+                                submitBtn.innerHTML = originalText;
+                                submitBtn.classList.remove('bg-green-600');
+                                submitBtn.classList.add('bg-gradient-to-r', 'from-primary', 'to-secondary');
+                                submitBtn.disabled = false;
+                                successMsg.remove();
+                            }, 3000);
+                        }, 1500);
+                    }
+                });
+            }
+            
+            // Animate stats on scroll
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const numberEl = entry.target.querySelector('.text-2xl');
+                        const targetNumber = parseInt(numberEl.textContent);
+                        if (!numberEl.classList.contains('animated')) {
+                            animateNumber(numberEl, 0, targetNumber, 1500);
+                            numberEl.classList.add('animated');
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('.stats-card').forEach(card => {
+                statsObserver.observe(card);
+            });
+        }
+
+        // Number counting animation
+        function animateNumber(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value + (element.textContent.includes('+') ? '+' : 
+                                              element.textContent.includes('%') ? '%' : '');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // ===== COPYRIGHT YEAR =====
+        function updateCopyrightYear() {
+            const currentYear = new Date().getFullYear();
+            document.querySelectorAll('.current-year').forEach(el => {
+                el.textContent = currentYear;
+            });
+        }
+
+        // ===== WINDOW RESIZE HANDLER =====
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function() {
+                // Re-initialize animations on resize
+                initScrollAnimations();
+            }, 250);
+        });
+
+        // ===== PAGE LOAD ANIMATION =====
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+            
+            // Remove loading animation if exists
+            const loader = document.querySelector('.page-loader');
+            if (loader) {
+                loader.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
