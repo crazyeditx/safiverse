@@ -1254,7 +1254,7 @@ a,button,[onclick],.filter-btn,.svc-hire-btn,select,input,textarea,label { curso
     <p class="hero-sub">I'm Safi, a creative graphics designer from Pakistan. Posters, social media, logos, branding, packaging, UI/UX, and print. I design across every medium with the same attention to detail and passion for great visual work.</p>
     <div class="hero-actions">
       <a href="#portfolio" class="btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
-      <a href="https://drive.google.com/uc?export=download&id=161tp750pEmkPvMe00KrvUcUKVJxV1dnM" class="btn-outline" target="_blank"><i class="fas fa-download"></i> Download CV</a>
+      <a href="https://drive.google.com/file/d/1rPFsHD7h-dx7_QJMU9t4QQMpsvrdNKq0/view?usp=sharing" class="btn-outline" target="_blank"><i class="fas fa-download"></i> Download CV</a>
     </div>
   </div>
   <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
@@ -1586,7 +1586,6 @@ a,button,[onclick],.filter-btn,.svc-hire-btn,select,input,textarea,label { curso
 </section>
 
 <!-- VIDEO -->
-<!--
 <section id="video" class="section video-section">
   <div class="section-label">My Process</div>
   <h2 class="section-title reveal">Watch My Creative Journey</h2>
@@ -1594,26 +1593,33 @@ a,button,[onclick],.filter-btn,.svc-hire-btn,select,input,textarea,label { curso
     See how I approach design challenges, from first concept to final print-ready file.
   </p>
   <div class="video-wrap reveal reveal-d2" id="videoWrap">
-    <video id="myVid" width="100%" poster="assets/video-poster.png" playsinline>
+    <video id="myVid" width="100%" poster="./assets/video-poster.jpg" playsinline>
       <source src="./assets/introduction-video.mp4" type="video/mp4">
     </video>
+    <!-- Custom play overlay - hides when playing -->
     <div class="vid-play-overlay" id="vidOverlay" onclick="startVideo()">
       <div class="vid-play-btn"><i class="fas fa-play" id="playIco"></i></div>
     </div>
+    <!-- CUSTOM VIDEO CONTROLS -->
     <div class="vid-controls" id="vidControls">
+      <!-- Play / Pause -->
       <button class="vid-ctrl-btn" id="vidPlayBtn" onclick="toggleVid()">
         <i class="fas fa-play" id="vidBtnIcon"></i>
       </button>
+      <!-- Timestamps -->
       <span class="vid-time" id="vidCurrent">0:00</span>
+      <!-- Progress bar -->
       <div class="vid-progress-wrap" id="vidProgressWrap" onclick="seekVideo(event)">
         <div class="vid-progress-bg"></div>
         <div class="vid-progress-fill" id="vidFill"></div>
         <div class="vid-progress-dot" id="vidDot"></div>
       </div>
       <span class="vid-time" id="vidDuration">0:00</span>
+      <!-- Volume -->
       <button class="vid-ctrl-btn" id="vidMuteBtn" onclick="toggleMute()">
         <i class="fas fa-volume-up" id="vidVolIcon"></i>
       </button>
+      <!-- Fullscreen -->
       <button class="vid-ctrl-btn" onclick="toggleFullscreen()">
         <i class="fas fa-expand"></i>
       </button>
@@ -1637,7 +1643,6 @@ a,button,[onclick],.filter-btn,.svc-hire-btn,select,input,textarea,label { curso
     </div>
   </div>
 </section>
--->
 
 <!-- HIRE ME -->
 <section id="hire" class="section">
@@ -2197,90 +2202,81 @@ filterBtns.forEach(btn => {
 });
 
 // ===== CUSTOM VIDEO PLAYER =====
+// Wrapped in null check — safe when video section is commented out
 const vid = document.getElementById('myVid');
-const vOverlay = document.getElementById('vidOverlay');
-const vidFill = document.getElementById('vidFill');
-const vidDot = document.getElementById('vidDot');
-const vidCurrent = document.getElementById('vidCurrent');
-const vidDuration = document.getElementById('vidDuration');
-const vidBtnIcon = document.getElementById('vidBtnIcon');
 
 function formatTime(s) {
   const m = Math.floor(s / 60);
   const sec = Math.floor(s % 60);
   return m + ':' + (sec < 10 ? '0' : '') + sec;
 }
-
-function startVideo() {
-  vid.play();
-  vOverlay.classList.add('hidden');
-}
-
+function startVideo() { if (!vid) return; vid.play(); document.getElementById('vidOverlay').classList.add('hidden'); }
 function toggleVid() {
-  if (vid.paused) {
-    vid.play();
-    vidBtnIcon.className = 'fas fa-pause';
-  } else {
-    vid.pause();
-    vidBtnIcon.className = 'fas fa-play';
-  }
+  if (!vid) return;
+  const icon = document.getElementById('vidBtnIcon');
+  if (vid.paused) { vid.play(); if(icon) icon.className = 'fas fa-pause'; }
+  else { vid.pause(); if(icon) icon.className = 'fas fa-play'; }
 }
-
 function toggleMute() {
+  if (!vid) return;
   vid.muted = !vid.muted;
-  document.getElementById('vidVolIcon').className = vid.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+  const icon = document.getElementById('vidVolIcon');
+  if (icon) icon.className = vid.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
 }
-
-function toggleFullscreen() {
-  const wrap = document.getElementById('videoWrap');
-  if (!document.fullscreenElement) {
-    wrap.requestFullscreen && wrap.requestFullscreen();
-  } else {
-    document.exitFullscreen && document.exitFullscreen();
-  }
-}
-
 function seekVideo(e) {
+  if (!vid) return;
   const wrap = document.getElementById('vidProgressWrap');
+  if (!wrap) return;
   const rect = wrap.getBoundingClientRect();
   const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
   vid.currentTime = pct * vid.duration;
 }
+function toggleFullscreen() {
+  const wrap = document.getElementById('videoWrap');
+  if (!wrap) return;
+  if (!document.fullscreenElement) { wrap.requestFullscreen && wrap.requestFullscreen(); }
+  else { document.exitFullscreen && document.exitFullscreen(); }
+}
 
-vid.addEventListener('loadedmetadata', () => {
-  vidDuration.textContent = formatTime(vid.duration);
-});
-
-vid.addEventListener('timeupdate', () => {
-  if (!vid.duration) return;
-  const pct = (vid.currentTime / vid.duration) * 100;
-  vidFill.style.width = pct + '%';
-  vidDot.style.left = pct + '%';
-  vidCurrent.textContent = formatTime(vid.currentTime);
-});
-
-vid.addEventListener('play', () => {
-  vidBtnIcon.className = 'fas fa-pause';
-  vOverlay.classList.add('hidden');
-});
-
-vid.addEventListener('pause', () => {
-  vidBtnIcon.className = 'fas fa-play';
-});
-
-vid.addEventListener('ended', () => {
-  vidBtnIcon.className = 'fas fa-play';
-  vidFill.style.width = '0%';
-  vidDot.style.left = '0%';
-  vidCurrent.textContent = '0:00';
-  vOverlay.classList.remove('hidden');
-});
-
-// Click anywhere on video to play/pause
-vid.addEventListener('click', (e) => {
-  // Prevent triggering if click was on controls
-  toggleVid();
-});
+if (vid) {
+  vid.addEventListener('loadedmetadata', () => {
+    const d = document.getElementById('vidDuration');
+    if (d) d.textContent = formatTime(vid.duration);
+  });
+  vid.addEventListener('timeupdate', () => {
+    if (!vid.duration) return;
+    const pct = (vid.currentTime / vid.duration) * 100;
+    const fill = document.getElementById('vidFill');
+    const dot  = document.getElementById('vidDot');
+    const cur  = document.getElementById('vidCurrent');
+    if (fill) fill.style.width = pct + '%';
+    if (dot)  dot.style.left  = pct + '%';
+    if (cur)  cur.textContent = formatTime(vid.currentTime);
+  });
+  vid.addEventListener('play', () => {
+    const icon = document.getElementById('vidBtnIcon');
+    const ov   = document.getElementById('vidOverlay');
+    if (icon) icon.className = 'fas fa-pause';
+    if (ov)   ov.classList.add('hidden');
+  });
+  vid.addEventListener('pause', () => {
+    const icon = document.getElementById('vidBtnIcon');
+    if (icon) icon.className = 'fas fa-play';
+  });
+  vid.addEventListener('ended', () => {
+    const icon = document.getElementById('vidBtnIcon');
+    const fill = document.getElementById('vidFill');
+    const dot  = document.getElementById('vidDot');
+    const cur  = document.getElementById('vidCurrent');
+    const ov   = document.getElementById('vidOverlay');
+    if (icon) icon.className = 'fas fa-play';
+    if (fill) fill.style.width = '0%';
+    if (dot)  dot.style.left  = '0%';
+    if (cur)  cur.textContent = '0:00';
+    if (ov)   ov.classList.remove('hidden');
+  });
+  vid.addEventListener('click', toggleVid);
+}
 
 // ===== CUSTOM ANIMATED SELECT =====
 function toggleSelect() {
@@ -2543,12 +2539,15 @@ function closeCaseStudy() {
 */
 
 // ===== LOADING SCREEN =====
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('hide');
-    document.body.style.overflow = '';
-  }, 2400);
-});
+function hideLoader() {
+  const loader = document.getElementById('loader');
+  if (loader) loader.classList.add('hide');
+  document.body.style.overflow = '';
+}
+// Primary: hide after page loads
+window.addEventListener('load', () => { setTimeout(hideLoader, 2400); });
+// Safety fallback: force hide after 4s no matter what
+setTimeout(hideLoader, 4000);
 document.body.style.overflow = 'hidden';
 
 // ===== CUSTOM CURSOR =====
@@ -2557,6 +2556,8 @@ document.body.style.overflow = 'hidden';
 
 // ===== ANIMATED NUMBER COUNTERS =====
 function animateCounter(el) {
+  if (el.classList.contains('counted')) return;
+  el.classList.add('counted');
   const target = parseInt(el.getAttribute('data-target'));
   const suffix = el.getAttribute('data-suffix') || '';
   const duration = 1800;
@@ -2567,20 +2568,27 @@ function animateCounter(el) {
     const eased = 1 - Math.pow(1 - progress, 3);
     el.textContent = Math.floor(eased * target) + suffix;
     if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target + suffix;
   };
   requestAnimationFrame(update);
 }
 
+// Lower threshold + rootMargin so it fires earlier and more reliably
 const counterObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
-      entry.target.classList.add('counted');
-      animateCounter(entry.target);
-    }
+    if (entry.isIntersecting) animateCounter(entry.target);
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
 
 document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+
+// Fallback — run counters if already visible on page load
+window.addEventListener('load', () => {
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) animateCounter(el);
+  });
+});
 
 // ===== FAQ ACCORDION =====
 function toggleFaq(btn) {
@@ -2641,6 +2649,18 @@ window.addEventListener('scroll', () => {
   document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
     if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('visible');
   });
+});
+
+// Reliable fallback — runs after full page load on GitHub Pages
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.reveal').forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight + 100) el.classList.add('visible');
+    });
+    document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+      animateCounter(el);
+    });
+  }, 600);
 });
 </script>
 </body>
