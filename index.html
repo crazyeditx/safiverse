@@ -1,0 +1,2652 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safiverse | Graphics Designer, Pakistan</title>
+<meta name="description" content="Safi, a Pakistan-based creative graphics designer. Packaging, logo, social media, branding, print design and UI/UX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ===================== CSS VARIABLES ===================== */
+:root {
+  --brand: #C9A96E;
+  --brand-light: #e0c490;
+  --bg: #0D0D0D;
+  --surface: #141414;
+  --card: #1A1A1A;
+  --border: #2A2A2A;
+  --muted: #888888;
+  --light: #F5F0E8;
+  --text: #F5F0E8;
+  --text-muted: #888888;
+  --shadow: rgba(0,0,0,0.4);
+  --popup-bg: rgba(0,0,0,0.85);
+}
+[data-theme="light"] {
+  --bg: #F8F5F0;
+  --surface: #FFFFFF;
+  --card: #FFFFFF;
+  --border: #E5DDD0;
+  --muted: #888888;
+  --light: #F5F0E8;
+  --text: #1A1A1A;
+  --text-muted: #666666;
+  --shadow: rgba(0,0,0,0.1);
+  --popup-bg: rgba(0,0,0,0.7);
+}
+
+/* ===================== RESET & BASE ===================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--brand); border-radius: 2px; }
+::selection { background: rgba(201,169,110,0.3); color: var(--text); }
+
+/* ===================== PROGRESS ===================== */
+#progress {
+  position: fixed; top: 0; left: 0; height: 2px;
+  background: var(--brand); z-index: 9999;
+  width: 0%; transition: width 0.1s;
+}
+
+/* ===================== NAV ===================== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 20px 6%;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all 0.4s ease;
+}
+nav.scrolled {
+  background: rgba(13,13,13,0.96);
+  backdrop-filter: blur(24px);
+  padding: 14px 6%;
+  border-bottom: 1px solid var(--border);
+}
+[data-theme="light"] nav.scrolled {
+  background: rgba(248,245,240,0.96);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; font-weight: 800;
+  color: var(--text); letter-spacing: 3px;
+  text-decoration: none; text-transform: uppercase;
+}
+.nav-logo span { color: var(--brand); }
+.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
+.nav-links a {
+  color: var(--text-muted); text-decoration: none;
+  font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  transition: color 0.3s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--brand); }
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.nav-cta {
+  padding: 10px 22px; border: 1px solid var(--brand);
+  color: var(--brand); text-decoration: none;
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  transition: all 0.3s;
+}
+.nav-cta:hover { background: var(--brand); color: #0D0D0D; }
+
+/* Theme toggle */
+.theme-toggle {
+  width: 38px; height: 38px; border: 1px solid var(--border);
+  background: transparent; color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.3s; font-size: 0.85rem;
+}
+.theme-toggle:hover { border-color: var(--brand); color: var(--brand); }
+
+/* Hamburger */
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none; padding: 4px;
+}
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--text); transition: all 0.3s; }
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+  .nav-links, .nav-cta { display: none; }
+}
+
+/* Mobile menu */
+.mob-menu {
+  position: fixed; top: 0; right: -100%;
+  width: 280px; height: 100vh;
+  background: var(--surface); border-left: 1px solid var(--border);
+  z-index: 200; padding: 80px 40px 40px;
+  transition: right 0.4s cubic-bezier(0.77,0.2,0.05,1.0);
+  display: flex; flex-direction: column; gap: 24px;
+}
+.mob-menu.open { right: 0; }
+.mob-menu a { font-size: 1rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; letter-spacing: 1px; }
+.mob-menu a:hover { color: var(--brand); }
+.mob-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 150; display: none; }
+.mob-overlay.open { display: block; }
+
+/* ===================== HERO ===================== */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  padding: 120px 6% 80px; position: relative; overflow: hidden;
+}
+.hero-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,169,110,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,169,110,0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+[data-theme="light"] .hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(201,169,110,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,169,110,0.12) 1px, transparent 1px);
+}
+.hero-glow {
+  position: absolute; width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(201,169,110,0.07) 0%, transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--brand); margin-bottom: 24px;
+}
+.hero-eyebrow::before { content:''; display:block; width:28px; height:1px; background:var(--brand); }
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 900; line-height: 1.05;
+  letter-spacing: -2px; color: var(--text);
+  margin-bottom: 24px;
+}
+.hero-headline em { font-style: italic; color: var(--brand); }
+.hero-sub {
+  font-size: 0.95rem; color: var(--text-muted);
+  line-height: 1.9; max-width: 500px; margin-bottom: 44px;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-primary {
+  padding: 14px 30px; background: var(--brand); color: #0D0D0D;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; text-decoration: none;
+  transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--brand);
+}
+.btn-primary:hover { background: var(--brand-light); transform: translateY(-2px); }
+.btn-outline {
+  padding: 14px 30px; border: 1px solid var(--border);
+  color: var(--text-muted); font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;
+  transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-outline:hover { border-color: var(--brand); color: var(--brand); transform: translateY(-2px); }
+.hero-scroll {
+  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: var(--text-muted); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
+  animation: floatScroll 3s ease-in-out infinite;
+}
+
+/* ===================== MARQUEE ===================== */
+.marquee-wrap {
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 14px 0; overflow: hidden; background: var(--surface);
+}
+.marquee-track { display: flex; gap: 56px; animation: marquee 22s linear infinite; width: max-content; }
+.marquee-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-muted); white-space: nowrap;
+}
+.marquee-item .dot { color: var(--brand); }
+
+/* ===================== SECTIONS ===================== */
+.section { padding: 100px 6%; }
+.section-label {
+  font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--brand); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-label::before { content:''; display:block; width:22px; height:1px; background:var(--brand); }
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700; line-height: 1.15; color: var(--text); margin-bottom: 20px;
+}
+
+/* ===================== ABOUT ===================== */
+.about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: start; }
+.about-photo-frame {
+  position: relative; aspect-ratio: 3/4;
+  background: var(--card); border: 1px solid var(--border); overflow: hidden;
+}
+.about-photo-frame img { width:100%; height:100%; object-fit:cover; filter:grayscale(15%); transition:filter 0.4s; }
+.about-photo-frame:hover img { filter:grayscale(0%); }
+.about-accent {
+  position: absolute; bottom: -20px; right: -20px;
+  width: 150px; background: var(--card); border: 1px solid var(--border); padding: 18px;
+}
+.about-accent .num { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:700; color:var(--brand); line-height:1; }
+.about-accent .lbl { font-size:0.68rem; color:var(--text-muted); letter-spacing:1px; margin-top:4px; }
+.about-content p { color: var(--text-muted); line-height:1.9; font-size:0.9rem; margin-bottom:18px; }
+.about-content p strong { color: var(--text); font-weight:500; }
+.tools-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:28px; }
+.tool-item {
+  display:flex; align-items:center; gap:10px; padding:12px 14px;
+  border:1px solid var(--border); background:var(--card); transition:border-color 0.3s;
+}
+.tool-item:hover { border-color: var(--brand); }
+.tool-item i { color:var(--brand); width:16px; font-size:0.9rem; }
+.tool-item span { font-size:0.8rem; color:var(--text); }
+.internship-card {
+  margin-top:28px; padding:20px; border-left:2px solid var(--brand); background:var(--card);
+}
+.internship-card .co { font-size:0.68rem; letter-spacing:2px; text-transform:uppercase; color:var(--brand); margin-bottom:4px; }
+.internship-card .role { font-size:0.95rem; color:var(--text); font-weight:600; margin-bottom:6px; }
+.internship-card .desc { font-size:0.8rem; color:var(--text-muted); line-height:1.7; }
+
+/* ===================== STATS ===================== */
+.stats-bar {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  background: var(--surface);
+}
+.stat-item { padding:44px 28px; border-right:1px solid var(--border); text-align:center; }
+.stat-item:last-child { border-right:none; }
+.stat-num { font-family:'Playfair Display',serif; font-size:2.8rem; font-weight:700; color:var(--brand); line-height:1; margin-bottom:6px; }
+.stat-lbl { font-size:0.68rem; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); }
+
+/* ===================== SERVICES ===================== */
+.services-section { background: var(--surface); }
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); margin-top:56px; }
+.service-card {
+  padding:36px 28px; background:var(--card); position:relative; overflow:hidden;
+  transition:background 0.3s;
+}
+.service-card:hover { background: var(--bg); }
+.service-card::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+  background:var(--brand); transform:scaleX(0); transform-origin:left;
+  transition:transform 0.4s ease;
+}
+.service-card:hover::after { transform:scaleX(1); }
+.svc-num { font-size:0.62rem; letter-spacing:2px; color:var(--brand); margin-bottom:16px; font-family:monospace; }
+.svc-icon { font-size:1.6rem; color:var(--brand); margin-bottom:16px; }
+.svc-title { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--text); margin-bottom:10px; }
+.svc-desc { font-size:0.8rem; color:var(--text-muted); line-height:1.8; margin-bottom:20px; }
+.svc-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:24px; }
+.tag {
+  font-size:0.6rem; letter-spacing:1px; text-transform:uppercase;
+  padding:4px 9px; border:1px solid var(--border); color:var(--text-muted);
+  transition:all 0.2s;
+}
+.service-card:hover .tag { border-color:rgba(201,169,110,0.3); color:var(--brand); }
+
+/* HIRE ME button inside service card */
+.svc-hire-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 9px 18px; border: 1px solid var(--brand);
+  color: var(--brand); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; background: transparent;
+  transition: all 0.3s; margin-top: auto;
+}
+.svc-hire-btn:hover { background: var(--brand); color: #0D0D0D; }
+
+/* ===================== HIRE POPUP ===================== */
+.popup-overlay {
+  position: fixed; inset: 0; background: var(--popup-bg);
+  z-index: 1000; display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.35s ease;
+  backdrop-filter: blur(8px);
+  padding: 20px;
+}
+.popup-overlay.active { opacity: 1; pointer-events: all; }
+.popup-box {
+  background: var(--card); border: 1px solid var(--border);
+  max-width: 620px; width: 100%;
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  position: relative; overflow: hidden;
+}
+.popup-overlay.active .popup-box { transform: translateY(0) scale(1); }
+.popup-top-bar { height: 2px; background: var(--brand); }
+.popup-inner { padding: 36px 36px 40px; }
+.popup-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 32px; height: 32px; border: 1px solid var(--border);
+  background: transparent; color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 0.75rem; transition: all 0.2s;
+}
+.popup-close:hover { border-color: var(--brand); color: var(--brand); }
+.popup-eyebrow {
+  font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--brand); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.popup-eyebrow::before { content:''; display:block; width:20px; height:1px; background:var(--brand); }
+.popup-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem; font-weight: 700; color: var(--text);
+  line-height: 1.2; margin-bottom: 8px;
+}
+.popup-subtitle { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 32px; }
+.popup-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.popup-card {
+  border: 1px solid var(--border); padding: 22px 20px;
+  text-decoration: none; display: block;
+  transition: all 0.3s; position: relative; overflow: hidden;
+  background: var(--surface);
+}
+.popup-card::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+  transform:scaleX(0); transform-origin:left; transition:transform 0.3s;
+}
+.popup-card.fiverr::after { background: #1DBF73; }
+.popup-card.upwork::after { background: #14A800; }
+.popup-card:hover { border-color: var(--brand); transform: translateY(-3px); }
+.popup-card:hover::after { transform: scaleX(1); }
+.popup-card-platform {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.popup-card.fiverr .popup-card-platform { color: #1DBF73; }
+.popup-card.upwork .popup-card-platform { color: #14A800; }
+.popup-card-platform i { font-size: 0.9rem; }
+.popup-card-title { font-family:'Playfair Display',serif; font-size:1rem; color:var(--text); margin-bottom:8px; }
+.popup-card-text { font-size:0.75rem; color:var(--text-muted); line-height:1.7; margin-bottom:16px; }
+.popup-card-cta {
+  font-size: 0.68rem; letter-spacing: 1.5px; text-transform: uppercase;
+  font-weight: 600; display: inline-flex; align-items: center; gap: 6px;
+  transition: gap 0.2s;
+}
+.popup-card.fiverr .popup-card-cta { color: #1DBF73; }
+.popup-card.upwork .popup-card-cta { color: #14A800; }
+.popup-card:hover .popup-card-cta { gap: 10px; }
+
+/* ===================== PORTFOLIO ===================== */
+.portfolio-filter { display:flex; gap:4px; margin-bottom:40px; flex-wrap:wrap; }
+.filter-btn {
+  padding:8px 18px; font-size:0.68rem; letter-spacing:1.5px; text-transform:uppercase;
+  border:1px solid var(--border); background:transparent; color:var(--text-muted);
+  cursor:pointer; transition:all 0.3s;
+}
+.filter-btn:hover, .filter-btn.active { border-color:var(--brand); color:var(--brand); background:rgba(201,169,110,0.06); }
+.portfolio-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:2px; background:var(--border);
+}
+.portfolio-item {
+  background:var(--card); overflow:hidden; position:relative;
+  aspect-ratio:4/3; cursor:pointer;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.portfolio-item.hiding { opacity:0; transform:scale(0.95); }
+.portfolio-item.showing { opacity:1; transform:scale(1); }
+.portfolio-item img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform 0.6s ease, filter 0.4s;
+  filter:grayscale(25%) brightness(0.85);
+  display:block;
+}
+.portfolio-item:hover img { transform:scale(1.06); filter:grayscale(0%) brightness(1); }
+.portfolio-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(13,13,13,0.92) 0%, rgba(13,13,13,0.3) 55%, transparent 100%);
+  opacity:0; transition:opacity 0.4s;
+  display:flex; flex-direction:column; justify-content:flex-end; padding:24px;
+}
+.portfolio-item:hover .portfolio-overlay { opacity:1; }
+.p-cat { font-size:0.6rem; letter-spacing:2px; text-transform:uppercase; color:var(--brand); margin-bottom:5px; }
+.p-name { font-family:'Playfair Display',serif; font-size:1.1rem; color:#F5F0E8; margin-bottom:10px; }
+.p-link {
+  font-size:0.68rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--brand);
+  text-decoration:none; display:inline-flex; align-items:center; gap:6px; transition:gap 0.2s;
+}
+.p-link:hover { gap:10px; }
+
+
+/* ===================== CUSTOM VIDEO PLAYER ===================== */
+.video-wrap { position: relative; overflow: hidden; border: 1px solid var(--border); margin-top: 44px; background: #000; }
+.video-wrap video { width: 100%; display: block; }
+
+.vid-play-overlay {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(13,13,13,0.55); cursor: pointer; transition: background 0.3s;
+  z-index: 3;
+}
+.vid-play-overlay:hover { background: rgba(13,13,13,0.3); }
+.vid-play-overlay.hidden { display: none; }
+.vid-play-btn {
+  width: 68px; height: 68px; border-radius: 50%; background: var(--brand);
+  display: flex; align-items: center; justify-content: center; transition: transform 0.3s;
+}
+.vid-play-btn i { color: #0D0D0D; font-size: 1.1rem; margin-left: 3px; }
+.vid-play-overlay:hover .vid-play-btn { transform: scale(1.1); }
+
+/* Controls bar */
+.vid-controls {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+  z-index: 4; opacity: 0; transition: opacity 0.3s ease;
+}
+.video-wrap:hover .vid-controls { opacity: 1; }
+
+.vid-ctrl-btn {
+  background: none; border: none; color: rgba(255,255,255,0.75);
+  font-size: 0.82rem; cursor: pointer; padding: 4px;
+  transition: color 0.2s; flex-shrink: 0; line-height: 1;
+}
+.vid-ctrl-btn:hover { color: var(--brand); }
+
+.vid-time {
+  font-size: 0.68rem; color: rgba(255,255,255,0.6);
+  font-family: 'Inter', sans-serif; letter-spacing: 0.5px;
+  flex-shrink: 0; min-width: 28px;
+}
+
+/* Gold progress line */
+.vid-progress-wrap {
+  flex: 1; position: relative; height: 20px;
+  display: flex; align-items: center; cursor: pointer;
+}
+.vid-progress-bg {
+  position: absolute; left: 0; right: 0; height: 1.5px;
+  background: rgba(255,255,255,0.2); border-radius: 2px;
+}
+.vid-progress-fill {
+  position: absolute; left: 0; height: 1.5px;
+  background: var(--brand); border-radius: 2px;
+  width: 0%; transition: width 0.1s linear;
+}
+.vid-progress-dot {
+  position: absolute; width: 9px; height: 9px;
+  background: var(--brand); border-radius: 50%;
+  left: 0%; transform: translateX(-50%);
+  transition: left 0.1s linear;
+  box-shadow: 0 0 6px rgba(201,169,110,0.6);
+  opacity: 0; transition: opacity 0.2s;
+}
+.vid-progress-wrap:hover .vid-progress-dot { opacity: 1; }
+.vid-progress-wrap:hover .vid-progress-bg { height: 2.5px; }
+.vid-progress-wrap:hover .vid-progress-fill { height: 2.5px; }
+
+/* ===================== VIDEO — (old replaced) ===================== */
+.video-section { background: var(--surface); }
+.video-wrap { position:relative; border:1px solid var(--border); overflow:hidden; margin-top:44px; }
+.video-wrap video { width:100%; display:block; }
+.vid-play-overlay {
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  background:rgba(13,13,13,0.5); cursor:pointer; transition:background 0.3s;
+}
+.vid-play-overlay:hover { background:rgba(13,13,13,0.25); }
+.vid-play-btn {
+  width:68px; height:68px; border-radius:50%; background:var(--brand);
+  display:flex; align-items:center; justify-content:center; transition:transform 0.3s;
+}
+.vid-play-btn i { color:#0D0D0D; font-size:1.1rem; margin-left:3px; }
+.vid-play-overlay:hover .vid-play-btn { transform:scale(1.1); }
+.process-strip {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1px; margin-top:1px; background:var(--border);
+}
+.process-item { background:var(--card); padding:26px 22px; }
+.process-icon { color:var(--brand); font-size:1.3rem; margin-bottom:10px; }
+.process-title { font-family:'Playfair Display',serif; font-size:0.95rem; color:var(--text); margin-bottom:6px; }
+.process-text { font-size:0.76rem; color:var(--text-muted); line-height:1.7; }
+
+/* ===================== HIRE ME ===================== */
+.hire-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; margin-top:56px; background:var(--border); }
+.hire-card {
+  background:var(--card); padding:44px 36px;
+  text-decoration:none; display:block;
+  border-bottom:2px solid transparent; transition:all 0.3s;
+}
+.hire-card:hover { background:var(--surface); border-bottom-color:var(--brand); transform:translateY(-2px); }
+.hire-platform { font-size:0.68rem; letter-spacing:2.5px; text-transform:uppercase; color:var(--brand); margin-bottom:18px; display:flex; align-items:center; gap:8px; }
+.hire-platform i { font-size:1rem; }
+.hire-title { font-family:'Playfair Display',serif; font-size:1.9rem; color:var(--text); margin-bottom:10px; }
+.hire-desc { font-size:0.82rem; color:var(--text-muted); line-height:1.8; margin-bottom:20px; }
+.hire-cta { font-size:0.75rem; color:var(--brand); font-weight:600; letter-spacing:1px; display:flex; align-items:center; gap:8px; transition:gap 0.2s; }
+.hire-card:hover .hire-cta { gap:12px; }
+.direct-cta {
+  margin-top:1px; background:var(--card); border:1px solid var(--border);
+  border-top:none; padding:44px 36px;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+}
+.direct-cta-text .t { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--text); margin-bottom:6px; }
+.direct-cta-text .s { font-size:0.82rem; color:var(--text-muted); }
+
+/* ===================== CONTACT ===================== */
+.contact-section { background: var(--surface); }
+.contact-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:72px; margin-top:56px; }
+.contact-item { display:flex; align-items:flex-start; gap:14px; padding-bottom:24px; border-bottom:1px solid var(--border); margin-bottom:24px; }
+.contact-item:last-child { border-bottom:none; margin-bottom:0; }
+.c-icon { width:38px; height:38px; flex-shrink:0; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--brand); font-size:0.8rem; }
+.c-lbl { font-size:0.62rem; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); margin-bottom:3px; }
+.c-val { font-size:0.88rem; color:var(--text); }
+.c-val a { color:var(--text); text-decoration:none; transition:color 0.2s; }
+.c-val a:hover { color:var(--brand); }
+.contact-form { display:flex; flex-direction:column; gap:14px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.form-group { display:flex; flex-direction:column; gap:7px; }
+.form-lbl { font-size:0.65rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); }
+.form-inp {
+  padding:13px 14px; background:var(--card); border:1px solid var(--border);
+  color:var(--text); font-family:'Inter',sans-serif; font-size:0.88rem;
+  outline:none; transition:border-color 0.3s;
+}
+.form-inp:focus { border-color:var(--brand); }
+.form-inp::placeholder { color:var(--border); }
+textarea.form-inp { resize:vertical; min-height:110px; }
+select.form-inp { cursor:pointer; }
+select.form-inp option { background:var(--card); color:var(--text); }
+
+/* ===================== FOOTER ===================== */
+footer {
+  background: var(--surface); border-top:1px solid var(--border);
+  padding:56px 6% 28px;
+}
+.footer-top { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:52px; margin-bottom:52px; }
+.f-logo { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:800; color:var(--text); letter-spacing:3px; margin-bottom:14px; }
+.f-logo span { color:var(--brand); }
+.f-brand p { font-size:0.8rem; color:var(--text-muted); line-height:1.8; max-width:240px; }
+.f-col h4 { font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; color:var(--brand); margin-bottom:18px; }
+.f-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.f-col ul a { font-size:0.8rem; color:var(--text-muted); text-decoration:none; transition:color 0.2s; }
+.f-col ul a:hover { color:var(--text); }
+.footer-bottom {
+  border-top:1px solid var(--border); padding-top:24px;
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+}
+.footer-bottom p { font-size:0.72rem; color:var(--text-muted); }
+.social-links { display:flex; gap:10px; }
+.s-link {
+  width:34px; height:34px; border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--text-muted); text-decoration:none; font-size:0.78rem;
+  transition:all 0.3s;
+}
+.s-link:hover { border-color:var(--brand); color:var(--brand); }
+
+/* ===================== LOADING SCREEN ===================== */
+#loader {
+  position: fixed; inset: 0; background: #0D0D0D;
+  z-index: 99999; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 24px;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+#loader.hide { opacity: 0; visibility: hidden; }
+.loader-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem; font-weight: 900;
+  letter-spacing: 4px; color: #F5F0E8;
+  opacity: 0; animation: loaderFadeIn 0.8s 0.3s forwards;
+}
+.loader-logo span { color: #C9A96E; }
+.loader-bar-wrap {
+  width: 160px; height: 1px; background: #2A2A2A;
+  overflow: hidden;
+  opacity: 0; animation: loaderFadeIn 0.6s 0.6s forwards;
+}
+.loader-bar {
+  height: 100%; width: 0%; background: #C9A96E;
+  animation: loaderProgress 1.8s 0.8s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+.loader-txt {
+  font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase;
+  color: #888; opacity: 0; animation: loaderFadeIn 0.6s 0.7s forwards;
+}
+@keyframes loaderFadeIn { to { opacity: 1; } }
+@keyframes loaderProgress { to { width: 100%; } }
+
+/* ===================== CUSTOM PEN NIB CURSOR ===================== */
+/* TO HIDE: comment out the 2 lines marked below in this block */
+* { cursor: none !important; }                          /* HIDE LINE 1 */
+a,button,[onclick],.filter-btn,.svc-hire-btn,select,input,textarea,label { cursor: none !important; } /* HIDE LINE 2 */
+
+#pen-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  /* nib tip (bottom-left of SVG) is the exact click point */
+  transform: translate(-4px, -28px);
+  transition: transform 0.05s ease;
+  will-change: transform, left, top;
+}
+#pen-cursor svg {
+  filter: drop-shadow(0 2px 6px rgba(201,169,110,0.45));
+  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+}
+/* Tilt pen slightly on hover over clickable elements */
+#pen-cursor.hovered svg {
+  transform: rotate(-15deg) scale(1.15);
+  filter: drop-shadow(0 4px 12px rgba(201,169,110,0.7));
+}
+
+/* Click ripple / ink drop animation */
+.ink-drop {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: radial-gradient(circle, rgba(201,169,110,0.55) 0%, transparent 70%);
+  animation: inkSplash 0.55s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+}
+@keyframes inkSplash {
+  0%   { transform: translate(-50%,-50%) scale(0); opacity: 1; width: 8px; height: 8px; }
+  60%  { opacity: 0.7; }
+  100% { transform: translate(-50%,-50%) scale(1); opacity: 0; width: 48px; height: 48px; }
+}
+
+/* Ink dot burst — tiny particles on click */
+.ink-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99997;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--brand);
+  transform: translate(-50%,-50%);
+  animation: inkParticle 0.5s ease-out forwards;
+}
+@keyframes inkParticle {
+  0%   { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+  100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.2); }
+}
+
+/* ===================== AVAILABILITY BADGE ===================== */
+.avail-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 18px; border: 1px solid rgba(34,197,94,0.3);
+  background: rgba(34,197,94,0.06);
+  margin-bottom: 24px;
+}
+.avail-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #22C55E;
+  animation: pulse-green 2s infinite;
+  flex-shrink: 0;
+}
+.avail-text { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: #22C55E; }
+@keyframes pulse-green {
+  0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
+
+/* ===================== PROCESS TIMELINE — SCROLL TRACKED ===================== */
+/* Single grid — both columns share the same rows so nodes stay aligned with content */
+.timeline-wrap {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0 32px;
+  margin-top: 60px;
+  position: relative;
+}
+
+/* ---- LEFT TRACK ---- */
+/* Each left cell: node + vertical connector below it */
+.tl-track-cell {
+  display: flex; flex-direction: column; align-items: center;
+  position: relative;
+}
+
+/* Connector line below each node — stretches to fill space */
+.tl-connector {
+  flex: 1; width: 1px; background: var(--border);
+  min-height: 24px; position: relative; overflow: hidden;
+}
+/* Gold fill inside connector — grows from top */
+.tl-connector-fill {
+  position: absolute; top: 0; left: 0; right: 0;
+  background: var(--brand); height: 0%;
+  transition: height 0.12s linear;
+  box-shadow: 0 0 6px rgba(201,169,110,0.35);
+}
+/* Hide connector on last item */
+.tl-track-cell:last-child .tl-connector { display: none; }
+
+/* Step node circle */
+.tl-node {
+  width: 56px; height: 56px; flex-shrink: 0;
+  border: 1px solid var(--border); background: var(--card);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; font-weight: 700; color: var(--brand);
+  position: relative; z-index: 2;
+  transition: all 0.4s ease;
+}
+.tl-node.active {
+  background: var(--brand); color: #0D0D0D;
+  border-color: var(--brand);
+  box-shadow: 0 0 16px rgba(201,169,110,0.3);
+}
+
+/* ---- RIGHT CONTENT ---- */
+.tl-item {
+  padding-bottom: 48px;
+  padding-top: 10px;
+}
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item.active .tl-title { color: var(--brand); }
+.tl-label { font-size: 0.65rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--brand); margin-bottom: 6px; }
+.tl-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--text); margin-bottom: 8px; transition: color 0.4s; }
+.tl-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.8; max-width: 500px; }
+
+/* ===================== FAQ ===================== */
+.faq-section { background: var(--surface); }
+.faq-list { margin-top: 52px; display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+.faq-item { background: var(--card); overflow: hidden; }
+.faq-q {
+  width: 100%; padding: 22px 28px;
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  background: transparent; border: none; color: var(--text);
+  font-family: 'Inter', sans-serif; font-size: 0.92rem; font-weight: 500;
+  cursor: pointer; text-align: left; transition: color 0.3s;
+}
+.faq-q:hover { color: var(--brand); }
+.faq-q.open { color: var(--brand); }
+.faq-icon { flex-shrink: 0; color: var(--brand); font-size: 0.75rem; transition: transform 0.35s ease; }
+.faq-q.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+  padding: 0 28px;
+}
+.faq-a.open { max-height: 200px; padding: 0 28px 22px; }
+.faq-a p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.85; }
+
+/* ===================== WHATSAPP FLOAT ===================== */
+#wa-float {
+  position: fixed; bottom: 88px; right: 28px;
+  width: 50px; height: 50px; border-radius: 50%;
+  background: #25D366; color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+  z-index: 89; opacity: 0; transform: scale(0.8);
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+#wa-float.show { opacity: 1; transform: scale(1); }
+#wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,0.5); }
+.wa-tooltip {
+  position: absolute; right: 58px; top: 50%;
+  transform: translateY(-50%);
+  background: var(--card); border: 1px solid var(--border);
+  padding: 6px 12px; white-space: nowrap;
+  font-size: 0.72rem; color: var(--text); letter-spacing: 0.5px;
+  opacity: 0; pointer-events: none; transition: opacity 0.2s;
+}
+#wa-float:hover .wa-tooltip { opacity: 1; }
+
+/* ===================== BACK TO TOP - PROGRESS RING ===================== */
+#btt {
+  position: fixed; bottom: 28px; right: 28px;
+  width: 48px; height: 48px;
+  background: transparent; border: none;
+  cursor: pointer; z-index: 90;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.3s, transform 0.3s;
+  display: flex; align-items: center; justify-content: center;
+}
+#btt.show { opacity: 1; transform: translateY(0); }
+#btt svg { position: absolute; inset: 0; width: 48px; height: 48px; transform: rotate(-90deg); }
+#btt-track { fill: none; stroke: var(--border); stroke-width: 2; }
+#btt-fill { fill: none; stroke: var(--brand); stroke-width: 2; stroke-dasharray: 138; stroke-dashoffset: 138; transition: stroke-dashoffset 0.1s; }
+
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+@keyframes floatScroll { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-8px)} }
+.reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.reveal-d1{transition-delay:0.1s} .reveal-d2{transition-delay:0.2s}
+.reveal-d3{transition-delay:0.3s} .reveal-d4{transition-delay:0.4s}
+@keyframes countUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:1024px){
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .hire-grid{grid-template-columns:1fr}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .popup-cards{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .hero{padding:100px 5% 80px}
+  .hero-headline{font-size:clamp(2.4rem,8vw,3.8rem)}
+  .section{padding:70px 5%}
+  .services-grid{grid-template-columns:1fr}
+  .portfolio-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .process-strip{grid-template-columns:1fr}
+  .direct-cta{flex-direction:column}
+  .popup-inner{padding:24px}
+  .popup-title{font-size:1.3rem}
+  .timeline-wrap{grid-template-columns:44px 1fr;gap:0 16px}
+  .tl-node{width:44px;height:44px;font-size:0.85rem}
+  #cursor-dot,#cursor-ring{display:none}
+  *{cursor:auto!important}
+}
+
+/* ===================== TYPEWRITER HERO ===================== */
+.typewriter-wrap {
+  display: inline-block;
+  color: var(--brand);
+  font-style: italic;
+  min-width: 280px;
+}
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px; height: 0.85em;
+  background: var(--brand);
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: blink 0.9s step-end infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* ===================== CLIENTS STRIP ===================== */
+.clients-section {
+  padding: 60px 6%;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+}
+.clients-label {
+  font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--text-muted); text-align: center; margin-bottom: 36px;
+}
+.clients-track-wrap { overflow: hidden; position: relative; }
+.clients-track-wrap::before,
+.clients-track-wrap::after {
+  content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2;
+}
+.clients-track-wrap::before { left: 0; background: linear-gradient(to right, var(--surface), transparent); }
+.clients-track-wrap::after { right: 0; background: linear-gradient(to left, var(--surface), transparent); }
+.clients-track {
+  display: flex; gap: 48px; align-items: center;
+  animation: clientsScroll 28s linear infinite;
+  width: max-content;
+}
+.clients-track:hover { animation-play-state: paused; }
+.client-logo {
+  display: flex; align-items: center; justify-content: center;
+  padding: 14px 28px; border: 1px solid var(--border);
+  background: var(--card); min-width: 140px; height: 60px;
+  transition: border-color 0.3s, transform 0.3s;
+  flex-shrink: 0;
+}
+.client-logo:hover { border-color: var(--brand); transform: translateY(-2px); }
+.client-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem; font-weight: 700;
+  color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase;
+  transition: color 0.3s;
+}
+.client-logo:hover .client-logo-text { color: var(--brand); }
+@keyframes clientsScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* ===================== AVAILABILITY STATUS ===================== */
+/* TO CHANGE STATUS: edit the .avail-status-dot and .avail-status-text classes */
+/* green = available | yellow = limited | red = booked */
+.avail-status-wrap {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 12px; border-radius: 20px;
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.2);
+  font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase;
+  /* YELLOW (limited): change above bg to rgba(234,179,8,0.08) and border to rgba(234,179,8,0.2) */
+  /* RED (booked): change above bg to rgba(239,68,68,0.08) and border to rgba(239,68,68,0.2) */
+}
+.avail-status-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #22C55E; flex-shrink: 0;
+  animation: pulse-green 2s infinite;
+  /* YELLOW: change to #EAB308 | RED: change to #EF4444 */
+}
+.avail-status-text {
+  color: #22C55E;
+  /* YELLOW: change to #EAB308 | RED: change to #EF4444 */
+}
+
+/* ===================== PAGE TRANSITIONS ===================== */
+.section-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.25,0.46,0.45,0.94),
+              transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.section-fade.in-view { opacity: 1; transform: translateY(0); }
+
+/* ===================== CASE STUDY (COMMENTED OUT — READY TO ACTIVATE) ===================== */
+/*
+.case-study-overlay {
+  position: fixed; inset: 0; background: var(--bg);
+  z-index: 500; overflow-y: auto;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.case-study-overlay.open { opacity: 1; pointer-events: all; }
+.case-study-inner { max-width: 900px; margin: 0 auto; padding: 100px 6% 80px; }
+.case-study-close {
+  position: fixed; top: 24px; right: 24px;
+  width: 40px; height: 40px; border: 1px solid var(--border);
+  background: var(--card); color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 0.85rem; transition: all 0.2s; z-index: 501;
+}
+.case-study-close:hover { border-color: var(--brand); color: var(--brand); }
+.cs-hero-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border: 1px solid var(--border); margin-bottom: 48px; }
+.cs-meta { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); margin-bottom: 48px; }
+.cs-meta-item { background: var(--card); padding: 20px 24px; }
+.cs-meta-label { font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--brand); margin-bottom: 4px; }
+.cs-meta-val { font-size: 0.88rem; color: var(--text); font-weight: 500; }
+.cs-section-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text); margin-bottom: 16px; }
+.cs-body p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 20px; }
+*/
+
+/* ===================== NAV STATUS LIGHT ===================== */
+.nav-status {
+  display: flex; align-items: center; gap: 7px;
+  padding: 5px 12px; border: 1px solid rgba(34,197,94,0.25);
+  background: rgba(34,197,94,0.06);
+  /* YELLOW (limited): change border to rgba(234,179,8,0.25) bg to rgba(234,179,8,0.06) */
+  /* RED (booked): change border to rgba(239,68,68,0.25) bg to rgba(239,68,68,0.06) */
+}
+.nav-status-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #22C55E; flex-shrink: 0;
+  animation: pulse-green 2s infinite;
+  /* YELLOW: #EAB308 | RED: #EF4444 */
+}
+.nav-status-label {
+  font-size: 0.62rem; letter-spacing: 1.5px; text-transform: uppercase;
+  color: #22C55E; font-weight: 600;
+  /* YELLOW: #EAB308 | RED: #EF4444 */
+}
+@media(max-width:900px) { .nav-status { display: none; } }
+
+/* ===================== DESIGN QUOTE ===================== */
+.design-quote {
+  border-left: 2px solid var(--brand);
+  padding: 16px 20px;
+  margin: 24px 0;
+  background: var(--card);
+  position: relative;
+}
+.quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem; line-height: 0;
+  color: var(--brand); opacity: 0.4;
+  position: absolute; top: 20px; left: 14px;
+  font-style: normal;
+}
+.design-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.88rem; font-style: italic;
+  color: var(--text-muted); line-height: 1.8;
+  padding-left: 36px;
+}
+.design-quote cite {
+  display: block; font-size: 0.68rem; font-style: normal;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--brand); margin-top: 10px;
+}
+
+/* ===================== EXPANDED TOOLS ===================== */
+.about-tools-label {
+  font-size: 0.65rem; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 12px; margin-top: 24px;
+}
+.tools-grid-expanded {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;
+}
+.tool-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px; border: 1px solid var(--border);
+  background: var(--card); transition: all 0.3s;
+  font-size: 0.78rem; color: var(--text);
+}
+.tool-pill:hover { border-color: var(--brand); color: var(--brand); transform: translateY(-2px); }
+.tool-pill i { color: var(--brand); font-size: 0.85rem; }
+
+/* ===================== ABOUT VALUES LIST ===================== */
+.about-values {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.about-val-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.82rem; color: var(--text-muted);
+}
+.about-val-item i { color: var(--brand); font-size: 0.7rem; flex-shrink: 0; }
+
+/* ===================== CUSTOM ANIMATED SELECT ===================== */
+.custom-select-wrap { position: relative; user-select: none; }
+
+.custom-select-trigger {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 14px;
+  background: var(--card); border: 1px solid var(--border);
+  color: var(--text-muted); font-size: 0.88rem;
+  cursor: pointer; transition: border-color 0.3s, color 0.3s;
+}
+.custom-select-trigger:hover { border-color: var(--brand); }
+.custom-select-trigger.open { border-color: var(--brand); color: var(--text); }
+
+.custom-select-arrow {
+  font-size: 0.7rem; color: var(--brand);
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  flex-shrink: 0;
+}
+.custom-select-trigger.open .custom-select-arrow { transform: rotate(180deg); }
+.custom-select-val { font-family: 'Inter', sans-serif; }
+
+/* Dropdown panel */
+.custom-select-dropdown {
+  position: absolute; left: 0; right: 0; top: calc(100% + 4px);
+  background: var(--card); border: 1px solid var(--brand);
+  z-index: 200; overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    max-height 0.38s cubic-bezier(0.4,0,0.2,1),
+    opacity 0.28s ease,
+    transform 0.32s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none;
+}
+.custom-select-dropdown.open {
+  max-height: 320px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Each option */
+.csd-option {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px;
+  font-size: 0.85rem; color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s, color 0.2s, padding-left 0.2s;
+  opacity: 0;
+  transform: translateX(-10px);
+}
+/* Staggered slide-in for each option */
+.custom-select-dropdown.open .csd-option { opacity: 1; transform: translateX(0); }
+.custom-select-dropdown.open .csd-option:nth-child(1) { transition: all 0.22s ease 0.04s; }
+.custom-select-dropdown.open .csd-option:nth-child(2) { transition: all 0.22s ease 0.08s; }
+.custom-select-dropdown.open .csd-option:nth-child(3) { transition: all 0.22s ease 0.12s; }
+.custom-select-dropdown.open .csd-option:nth-child(4) { transition: all 0.22s ease 0.16s; }
+.custom-select-dropdown.open .csd-option:nth-child(5) { transition: all 0.22s ease 0.20s; }
+.custom-select-dropdown.open .csd-option:nth-child(6) { transition: all 0.22s ease 0.24s; }
+.custom-select-dropdown.open .csd-option:nth-child(7) { transition: all 0.22s ease 0.28s; }
+
+.csd-option:last-child { border-bottom: none; }
+.csd-option:hover { background: rgba(201,169,110,0.07); color: var(--brand); padding-left: 20px; }
+.csd-option.selected { background: rgba(201,169,110,0.1); color: var(--brand); }
+.csd-option.selected .csd-icon { color: var(--brand); }
+
+.csd-icon {
+  font-size: 0.85rem; color: var(--text-muted); width: 16px;
+  flex-shrink: 0; transition: color 0.2s;
+}
+.csd-option:hover .csd-icon { color: var(--brand); }
+</style>
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-logo">Safiverse<span>.</span></div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-txt">Loading Portfolio</div>
+</div>
+
+<!-- CUSTOM PEN NIB CURSOR -->
+<div id="pen-cursor">
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Pen nib body -->
+    <path d="M4 28 L14 10 L18 14 Z" fill="#C9A96E" opacity="0.9"/>
+    <!-- Nib highlight -->
+    <path d="M4 28 L14 10 L11 15 Z" fill="#e0c490" opacity="0.6"/>
+    <!-- Nib tip dot -->
+    <circle cx="4.5" cy="27.5" r="1.2" fill="#C9A96E"/>
+    <!-- Upper shaft -->
+    <path d="M14 10 L18 14 L22 6 L28 4 Z" fill="#C9A96E" opacity="0.85"/>
+    <!-- Shaft highlight -->
+    <path d="M18 14 L22 6 L28 4 L24 8 Z" fill="#e8d5a3" opacity="0.5"/>
+    <!-- Ink vent line -->
+    <line x1="9" y1="19" x2="13" y2="23" stroke="#0D0D0D" stroke-width="0.8" opacity="0.4"/>
+  </svg>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/923295646552" id="wa-float" target="_blank" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <span class="wa-tooltip">Lets Talk on WhatsApp</span>
+</a>
+
+<!-- Progress -->
+<div id="progress"></div>
+
+<!-- Back to top -->
+<!-- BACK TO TOP - PROGRESS RING -->
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <circle id="btt-track" cx="24" cy="24" r="22"/>
+    <circle id="btt-fill" cx="24" cy="24" r="22"/>
+  </svg>
+  <i class="fas fa-arrow-up" style="position:relative;z-index:1;color:var(--brand);font-size:0.75rem;"></i>
+</button>
+
+<!-- Mobile overlay -->
+<div class="mob-overlay" id="mobOverlay" onclick="closeMob()"></div>
+<div class="mob-menu" id="mobMenu">
+  <a href="#home" onclick="closeMob()">Home</a>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#portfolio" onclick="closeMob()">Portfolio</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="https://wa.me/923295646552" target="_blank" class="btn-primary" style="margin-top:8px;justify-content:center;text-align:center;">Let's Talk</a>
+</div>
+
+<!-- POPUP OVERLAY -->
+<div class="popup-overlay" id="hirePopup">
+  <div class="popup-box">
+    <div class="popup-top-bar"></div>
+    <button class="popup-close" onclick="closePopup()"><i class="fas fa-times"></i></button>
+    <div class="popup-inner">
+      <div class="popup-eyebrow" id="popupEyebrow">Packaging Design</div>
+      <h3 class="popup-title" id="popupTitle">Ready to make your product impossible to ignore?</h3>
+      <p class="popup-subtitle" id="popupSubtitle">Choose where you'd like to hire me. Both platforms offer fast delivery, unlimited revisions, and print-ready files.</p>
+      <div class="popup-cards">
+        <a href="https://www.fiverr.com/yousafkhan69" target="_blank" class="popup-card fiverr">
+          <div class="popup-card-platform">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#1DBF73"><path d="M23 12.5c0 5.799-4.701 10.5-10.5 10.5S2 18.299 2 12.5 6.701 2 12.5 2 23 6.701 23 12.5zM11.07 8.4c0 .822-.657 1.48-1.48 1.48-.82 0-1.48-.658-1.48-1.48 0-.822.66-1.48 1.48-1.48.823 0 1.48.658 1.48 1.48zm5.32 0c0 .822-.657 1.48-1.48 1.48-.82 0-1.48-.658-1.48-1.48 0-.822.66-1.48 1.48-1.48.823 0 1.48.658 1.48 1.48zm-9.07 5.6c.5 2 2.167 3.5 5.18 3.5 3.013 0 4.68-1.5 5.18-3.5H7.32z"/></svg>
+            Fiverr
+          </div>
+          <div class="popup-card-title" id="fiverr-title">Hire on Fiverr</div>
+          <div class="popup-card-text" id="fiverr-text">Fixed price packages. Fast delivery. Perfect for one-time projects with clear scope.</div>
+          <div class="popup-card-cta">View My Gig <i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="https://www.upwork.com/freelancers/~014ee67a465b323586" target="_blank" class="popup-card upwork">
+          <div class="popup-card-platform">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#14A800"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.449-5.439-5.449z"/></svg>
+            Upwork
+          </div>
+          <div class="popup-card-title" id="upwork-title">Hire on Upwork</div>
+          <div class="popup-card-text" id="upwork-text">Hourly or fixed contracts. Great for ongoing projects or when you need flexibility.</div>
+          <div class="popup-card-cta">View My Profile <i class="fas fa-arrow-right"></i></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">Safiverse<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <!-- STATUS INDICATOR - change color: green=available | yellow=limited | red=booked -->
+    <!-- TO CHANGE: update --status-color and the text below -->
+    <div class="nav-status" id="navStatus">
+      <span class="nav-status-dot"></span>
+      <span class="nav-status-label">Available</span>
+    </div>
+    <button class="theme-toggle" id="themeBtn" title="Toggle theme">
+      <i class="fas fa-sun" id="themeIcon"></i>
+    </button>
+    <a href="https://wa.me/923295646552" class="nav-cta" target="_blank">Let's Talk</a>
+    <button class="hamburger" onclick="openMob()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div style="position:relative;z-index:2;max-width:860px;">
+    <div class="hero-eyebrow">Packaging & Graphics Designer, Pakistan</div>
+    <h1 class="hero-headline">
+      I Design<br>
+      <span class="typewriter-wrap" id="heroTypewriter"></span><span class="typewriter-cursor"></span><br>
+      That Sells.
+    </h1>
+    <p class="hero-sub">I'm Safi, a creative graphics designer from Pakistan. Posters, social media, logos, branding, packaging, UI/UX, and print. I design across every medium with the same attention to detail and passion for great visual work.</p>
+    <div class="hero-actions">
+      <a href="#portfolio" class="btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
+      <a href="https://drive.google.com/uc?export=download&id=161tp750pEmkPvMe00KrvUcUKVJxV1dnM" class="btn-outline" target="_blank"><i class="fas fa-download"></i> Download CV</a>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
+  <span>Scroll</span><i class="fas fa-chevron-down"></i>
+</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track" id="mTrack">
+    <div class="marquee-item"><span class="dot">✦</span> Graphics Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Packaging Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Logo Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Social Media Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Brand Identity</div>
+    <div class="marquee-item"><span class="dot">✦</span> UI/UX Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Brochure Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Print Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Adobe Illustrator</div>
+    <div class="marquee-item"><span class="dot">✦</span> Adobe Photoshop</div>
+    <div class="marquee-item"><span class="dot">✦</span> Figma</div>
+    <div class="marquee-item"><span class="dot">✦</span> Graphics Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Packaging Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Logo Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Social Media Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Brand Identity</div>
+    <div class="marquee-item"><span class="dot">✦</span> UI/UX Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Brochure Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Print Design</div>
+    <div class="marquee-item"><span class="dot">✦</span> Adobe Illustrator</div>
+    <div class="marquee-item"><span class="dot">✦</span> Adobe Photoshop</div>
+    <div class="marquee-item"><span class="dot">✦</span> Figma</div>
+  </div>
+</div>
+
+<!-- CLIENTS / BRANDS STRIP -->
+<div class="clients-section">
+  <div class="clients-label">Brands &amp; Clients I Have Worked With</div>
+  <div class="clients-track-wrap">
+    <div class="clients-track">
+      <!-- Duplicate set for seamless loop -->
+      <div class="client-logo"><span class="client-logo-text">Novara Co.</span></div>
+      <div class="client-logo"><span class="client-logo-text">Lumex Studio</span></div>
+      <div class="client-logo"><span class="client-logo-text">Vantara</span></div>
+      <div class="client-logo"><span class="client-logo-text">Zephyr Labs</span></div>
+      <div class="client-logo"><span class="client-logo-text">Orion Brand</span></div>
+      <div class="client-logo"><span class="client-logo-text">Kestrel Co.</span></div>
+      <div class="client-logo"><span class="client-logo-text">Solaris Inc.</span></div>
+      <div class="client-logo"><span class="client-logo-text">Verdant Co.</span></div>
+
+      <!--
+      PLACEHOLDER CLIENT LOGO - UNLOCK AND DUPLICATE ME
+      HOW TO USE:
+      1. Remove the opening and closing comment tags
+      2. Replace "Brand Name" with your real client name
+      3. Or swap the text with an <img> tag for a real logo
+      4. Remember to also duplicate in the second set below
+         (the track is duplicated for seamless scroll loop)
+      5. Add the same item in BOTH sets to keep the loop smooth
+      <div class="client-logo"><span class="client-logo-text">Brand Name</span></div>
+      END PLACEHOLDER CLIENT LOGO
+      -->
+
+      <!-- Duplicate for seamless scroll -->
+      <div class="client-logo"><span class="client-logo-text">Novara Co.</span></div>
+      <div class="client-logo"><span class="client-logo-text">Lumex Studio</span></div>
+      <div class="client-logo"><span class="client-logo-text">Vantara</span></div>
+      <div class="client-logo"><span class="client-logo-text">Zephyr Labs</span></div>
+      <div class="client-logo"><span class="client-logo-text">Orion Brand</span></div>
+      <div class="client-logo"><span class="client-logo-text">Kestrel Co.</span></div>
+      <div class="client-logo"><span class="client-logo-text">Solaris Inc.</span></div>
+      <div class="client-logo"><span class="client-logo-text">Verdant Co.</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="section-label">About Me</div>
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="about-photo-frame">
+        <img src="./assets/Photo-main.jpg" alt="Safi Graphics Designer"
+          onerror="this.style.display='none';this.parentElement.style.background='var(--card)';this.parentElement.innerHTML='<div style=&quot;display:flex;align-items:center;justify-content:center;height:100%;font-size:6rem;color:rgba(201,169,110,0.15)&quot;><i class=&quot;fas fa-user&quot;></i></div>'">
+      </div>
+    </div>
+    <div class="about-content">
+      <h2 class="section-title reveal">A Graphics Designer Who Brings Your Vision to Life.</h2>
+      <p class="reveal reveal-d1">I am Safi, a graphics designer from Pakistan. I work across the full spectrum of visual design: posters, social media, logos, packaging, branding, UI/UX, and print. Whatever your project needs, I bring the same level of care and detail to all of it.</p>
+      <p class="reveal reveal-d2">I completed my diploma in Graphics Design from <strong>NS Training Institute</strong> and have been sharpening my skills through real hands-on projects ever since. I use professional tools to deliver clean, polished files ready to go. No back and forth, no confusion.</p>
+
+      <!-- Famous design quote -->
+      <blockquote class="design-quote reveal reveal-d2">
+        <span class="quote-mark">"</span>
+        Design is not just what it looks like and feels like. Design is how it works.
+        <cite>— Steve Jobs</cite>
+      </blockquote>
+
+      <!-- Tools - expanded grid -->
+      <div class="about-tools-label reveal reveal-d3">Tools I Work With</div>
+      <div class="tools-grid-expanded reveal reveal-d3">
+        <div class="tool-pill"><i class="fas fa-bezier-curve"></i><span>Illustrator</span></div>
+        <div class="tool-pill"><i class="fas fa-image"></i><span>Photoshop</span></div>
+        <div class="tool-pill"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+        <div class="tool-pill"><i class="fas fa-pen-nib"></i><span>Adobe XD</span></div>
+        <div class="tool-pill"><i class="fas fa-layer-group"></i><span>Canva</span></div>
+        <div class="tool-pill"><i class="fas fa-film"></i><span>Premiere Pro</span></div>
+      </div>
+
+      <!-- What I bring -->
+      <div class="about-values reveal reveal-d4">
+        <div class="about-val-item">
+          <i class="fas fa-check"></i>
+          <span>Print-ready files every time</span>
+        </div>
+        <div class="about-val-item">
+          <i class="fas fa-check"></i>
+          <span>Unlimited revisions included</span>
+        </div>
+        <div class="about-val-item">
+          <i class="fas fa-check"></i>
+          <span>Fast turnaround, clear communication</span>
+        </div>
+        <div class="about-val-item">
+          <i class="fas fa-check"></i>
+          <span>Available for global clients</span>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item reveal"><div class="stat-num" data-target="10" data-suffix="+">0+</div><div class="stat-lbl">Projects Done</div></div>
+  <div class="stat-item reveal reveal-d1"><div class="stat-num" data-target="4" data-suffix="+">0+</div><div class="stat-lbl">Design Tools</div></div>
+  <div class="stat-item reveal reveal-d2"><div class="stat-num" data-target="100" data-suffix="%">0%</div><div class="stat-lbl">Satisfied Clients</div></div>
+  <div class="stat-item reveal reveal-d3"><div class="stat-num" data-target="24" data-suffix="h">0h</div><div class="stat-lbl">Response Time</div></div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="section services-section">
+  <div class="section-label">My Services</div>
+  <h2 class="section-title reveal">Full-Spectrum Graphics<br>Design Services.</h2>
+  <div class="services-grid">
+
+    <!-- 01 Graphics Design - PRIMARY -->
+    <div class="service-card reveal">
+      <div class="svc-num">01</div>
+      <div class="svc-icon"><i class="fas fa-palette"></i></div>
+      <div class="svc-title">Graphics Design</div>
+      <div class="svc-desc">Visual design across every medium: posters, banners, flyers, social creatives, and brand assets. If it needs to look great, I design it with purpose and precision.</div>
+      <div class="svc-tags"><span class="tag">Posters</span><span class="tag">Banners</span><span class="tag">Creatives</span><span class="tag">Assets</span></div>
+      <button class="svc-hire-btn" onclick="openPopup('social')"><i class="fas fa-briefcase"></i> Hire Me for This</button>
+    </div>
+
+    <!-- 02 Social Media Design -->
+    <div class="service-card reveal reveal-d1">
+      <div class="svc-num">02</div>
+      <div class="svc-icon"><i class="fas fa-bullhorn"></i></div>
+      <div class="svc-title">Social Media Design</div>
+      <div class="svc-desc">Scroll-stopping posts, stories, and creatives built to perform. Consistent, on-brand, and designed for real engagement across Instagram, Facebook, and more.</div>
+      <div class="svc-tags"><span class="tag">Instagram</span><span class="tag">Facebook</span><span class="tag">Stories</span><span class="tag">Reels Cover</span></div>
+      <button class="svc-hire-btn" onclick="openPopup('social')"><i class="fas fa-briefcase"></i> Hire Me for This</button>
+    </div>
+
+    <!-- 03 Logo & Brand Identity -->
+    <div class="service-card reveal reveal-d2">
+      <div class="svc-num">03</div>
+      <div class="svc-icon"><i class="fas fa-signature"></i></div>
+      <div class="svc-title">Logo & Brand Identity</div>
+      <div class="svc-desc">A logo is more than a mark. It is the first thing people feel about your brand. I build logos that are bold, flexible, and timeless.</div>
+      <div class="svc-tags"><span class="tag">Logo</span><span class="tag">Brand Kit</span><span class="tag">Typography</span></div>
+      <button class="svc-hire-btn" onclick="openPopup('logo')"><i class="fas fa-briefcase"></i> Hire Me for This</button>
+    </div>
+
+    <!-- 04 Print -->
+    <div class="service-card reveal">
+      <div class="svc-num">04</div>
+      <div class="svc-icon"><i class="fas fa-file-alt"></i></div>
+      <div class="svc-title">Brochure & Print Design</div>
+      <div class="svc-desc">Brochures, flyers, and print materials that represent your brand properly. Designed for real-world printing with the right specs.</div>
+      <div class="svc-tags"><span class="tag">Brochure</span><span class="tag">Flyer</span><span class="tag">Leaflet</span></div>
+      <button class="svc-hire-btn" onclick="openPopup('print')"><i class="fas fa-briefcase"></i> Hire Me for This</button>
+    </div>
+
+    <!-- 05 Brand Guide -->
+    <div class="service-card reveal reveal-d1">
+      <div class="svc-num">05</div>
+      <div class="svc-icon"><i class="fas fa-layer-group"></i></div>
+      <div class="svc-title">Brand Style Guide</div>
+      <div class="svc-desc">A complete brand document covering colors, fonts, logo usage rules, and guidelines that keep your brand consistent everywhere.</div>
+      <div class="svc-tags"><span class="tag">Colors</span><span class="tag">Fonts</span><span class="tag">Guidelines</span></div>
+      <button class="svc-hire-btn" onclick="openPopup('brand')"><i class="fas fa-briefcase"></i> Hire Me for This</button>
+    </div>
+
+    <!-- 06 UI/UX -->
+    <div class="service-card reveal reveal-d2">
+      <div class="svc-num">06</div>
+      <div class="svc-icon"><i class="fas fa-mobile-alt"></i></div>
+      <div class="svc-title">UI/UX Design</div>
+      <div class="svc-desc">Clean, modern interfaces for websites and apps. Designed to be easy to use and great to look at. Built in Figma and Adobe XD.</div>
+      <div class="svc-tags"><span class="tag">Figma</span><span class="tag">Web UI</span><span class="tag">App UI</span></div>
+      <button class="svc-hire-btn" onclick="openPopup('uiux')"><i class="fas fa-briefcase"></i> Hire Me for This</button>
+    </div>
+
+
+    <!--
+    PLACEHOLDER SERVICE CARD - UNLOCK AND DUPLICATE ME
+    HOW TO USE:
+    1. Remove the opening and closing comment tags
+    2. Change the number (07), icon, title, description, tags
+    3. Add a new popup data entry in JS: popupData.yourkey = {...}
+    4. Update onclick="openPopup('yourkey')"
+    5. Duplicate this block for more services
+    <div class="service-card reveal">
+      <div class="svc-num">07</div>
+      <div class="svc-icon"><i class="fas fa-star"></i></div>
+      <div class="svc-title">Your New Service</div>
+      <div class="svc-desc">Describe what this service includes and the value it brings to your client. Keep it benefit-focused and clear.</div>
+      <div class="svc-tags">
+        <span class="tag">Tag One</span>
+        <span class="tag">Tag Two</span>
+        <span class="tag">Tag Three</span>
+      </div>
+      <button class="svc-hire-btn" onclick="openPopup('packaging')"><i class="fas fa-briefcase"></i> Hire Me for This</button>
+    </div>
+    END PLACEHOLDER SERVICE CARD
+    -->
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+  <div class="section-label">My Work</div>
+  <h2 class="section-title reveal">Selected Projects —<br>Graphics, Branding &amp; Beyond.</h2>
+  <div class="portfolio-filter reveal">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="packaging">Packaging</button>
+    <button class="filter-btn" data-filter="logo">Logo & Brand</button>
+    <button class="filter-btn" data-filter="social">Social Media</button>
+    <button class="filter-btn" data-filter="print">Print</button>
+    <button class="filter-btn" data-filter="ui">UI/UX</button>
+
+    <!--
+    PLACEHOLDER FILTER BUTTON - UNLOCK AND DUPLICATE ME
+    Add a new category filter. Also add data-cat="yourcategory"
+    to any portfolio item you want to appear in this filter.
+    <button class="filter-btn" data-filter="yourcategory">New Category</button>
+    -->
+
+  </div>
+  <div class="portfolio-grid" id="portfolioGrid">
+    <div class="portfolio-item showing" data-cat="packaging">
+      <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="Coffee Packaging">
+      <div class="portfolio-overlay">
+        <div class="p-cat">Packaging Design</div>
+        <div class="p-name">Nocturne Reserve , Coffee Label</div>
+        <a href="https://www.behance.net/SafiVerse" target="_blank" class="p-link">View Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="portfolio-item showing" data-cat="logo">
+      <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=600&q=80" alt="Logo Design">
+      <div class="portfolio-overlay">
+        <div class="p-cat">Logo Design</div>
+        <div class="p-name">Tech Startup Brand Identity</div>
+        <a href="https://www.behance.net/SafiVerse" target="_blank" class="p-link">View on Behance <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="portfolio-item showing" data-cat="packaging">
+      <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=600&q=80" alt="Skincare Packaging">
+      <div class="portfolio-overlay">
+        <div class="p-cat">Packaging Design</div>
+        <div class="p-name">Skincare Product Label Design</div>
+        <a href="https://www.behance.net/SafiVerse" target="_blank" class="p-link">View on Behance <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="portfolio-item showing" data-cat="social">
+      <img src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80" alt="Social Media">
+      <div class="portfolio-overlay">
+        <div class="p-cat">Social Media Design</div>
+        <div class="p-name">Brand Social Media Kit</div>
+        <a href="https://www.behance.net/SafiVerse" target="_blank" class="p-link">View on Behance <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="portfolio-item showing" data-cat="print">
+      <img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=600&q=80" alt="Brochure Design">
+      <div class="portfolio-overlay">
+        <div class="p-cat">Print Design</div>
+        <div class="p-name">Corporate Brochure Design</div>
+        <a href="https://www.behance.net/SafiVerse" target="_blank" class="p-link">View on Behance <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="portfolio-item showing" data-cat="ui">
+      <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="UI Design">
+      <div class="portfolio-overlay">
+        <div class="p-cat">UI/UX Design</div>
+        <div class="p-name">E-Commerce Web Design</div>
+        <a href="https://www.behance.net/gallery/236778673/Eco-Nest-Eco-Friendly-Website-UI-Design" target="_blank" class="p-link">View on Behance <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!--
+    PLACEHOLDER PORTFOLIO ITEM - UNLOCK AND DUPLICATE ME
+    HOW TO USE:
+    1. Remove the opening and closing comment tags
+    2. Replace the img src with your real project image URL
+    3. Change data-cat to match a filter: packaging | logo | social | print | ui
+    4. Update the category label, project name, and link
+    5. Duplicate this block for more portfolio items
+    <div class="portfolio-item showing" data-cat="packaging">
+      <img src="YOUR-IMAGE-URL-HERE.jpg" alt="Project Name">
+      <div class="portfolio-overlay">
+        <div class="p-cat">Category Name</div>
+        <div class="p-name">Your Project Name Here</div>
+        <a href="YOUR-BEHANCE-OR-LINK-HERE" target="_blank" class="p-link">View Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    END PLACEHOLDER PORTFOLIO ITEM
+    -->
+
+  </div>
+  <div style="text-align:center;margin-top:44px;" class="reveal">
+    <a href="https://www.behance.net/SafiVerse" target="_blank" class="btn-outline"><i class="fab fa-behance"></i> View All on Behance</a>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video" class="section video-section">
+  <div class="section-label">My Process</div>
+  <h2 class="section-title reveal">Watch My Creative Journey</h2>
+  <p style="color:var(--text-muted);font-size:0.88rem;max-width:480px;line-height:1.9;" class="reveal reveal-d1">
+    See how I approach design challenges, from first concept to final print-ready file.
+  </p>
+  <div class="video-wrap reveal reveal-d2" id="videoWrap">
+    <video id="myVid" width="100%" poster="./assets/video-poster.png" playsinline>
+      <source src="./assets/introduction-video.mp4" type="video/mp4">
+    </video>
+    <!-- Custom play overlay - hides when playing -->
+    <div class="vid-play-overlay" id="vidOverlay" onclick="startVideo()">
+      <div class="vid-play-btn"><i class="fas fa-play" id="playIco"></i></div>
+    </div>
+    <!-- CUSTOM VIDEO CONTROLS -->
+    <div class="vid-controls" id="vidControls">
+      <!-- Play / Pause -->
+      <button class="vid-ctrl-btn" id="vidPlayBtn" onclick="toggleVid()">
+        <i class="fas fa-play" id="vidBtnIcon"></i>
+      </button>
+      <!-- Timestamps -->
+      <span class="vid-time" id="vidCurrent">0:00</span>
+      <!-- Progress bar -->
+      <div class="vid-progress-wrap" id="vidProgressWrap" onclick="seekVideo(event)">
+        <div class="vid-progress-bg"></div>
+        <div class="vid-progress-fill" id="vidFill"></div>
+        <div class="vid-progress-dot" id="vidDot"></div>
+      </div>
+      <span class="vid-time" id="vidDuration">0:00</span>
+      <!-- Volume -->
+      <button class="vid-ctrl-btn" id="vidMuteBtn" onclick="toggleMute()">
+        <i class="fas fa-volume-up" id="vidVolIcon"></i>
+      </button>
+      <!-- Fullscreen -->
+      <button class="vid-ctrl-btn" onclick="toggleFullscreen()">
+        <i class="fas fa-expand"></i>
+      </button>
+    </div>
+  </div>
+  <div class="process-strip">
+    <div class="process-item reveal">
+      <div class="process-icon"><i class="fas fa-lightbulb"></i></div>
+      <div class="process-title">Concept First</div>
+      <div class="process-text">Every project starts with understanding your brand, audience, and competition before a single pixel is touched.</div>
+    </div>
+    <div class="process-item reveal reveal-d1">
+      <div class="process-icon"><i class="fas fa-pen-nib"></i></div>
+      <div class="process-title">Design & Refine</div>
+      <div class="process-text">I build in Illustrator and Photoshop, refining layouts, typography, and color until everything clicks perfectly.</div>
+    </div>
+    <div class="process-item reveal reveal-d2">
+      <div class="process-icon"><i class="fas fa-file-export"></i></div>
+      <div class="process-title">Print Ready Delivery</div>
+      <div class="process-text">Final files in AI, PDF, PNG formats. Ready to send straight to your printer or manufacturer. No back and forth.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HIRE ME -->
+<section id="hire" class="section">
+  <div class="section-label">Work With Me</div>
+  <h2 class="section-title reveal">Hire Me For Your<br>Next Project.</h2>
+  <p style="color:var(--text-muted);font-size:0.88rem;max-width:460px;line-height:1.9;margin-bottom:8px;" class="reveal reveal-d1">
+    Available for freelance projects on Fiverr and Upwork. Fast delivery, unlimited revisions, print-ready files every time.
+  </p>
+  <div class="hire-grid reveal reveal-d2">
+    <a href="https://www.fiverr.com/yousafkhan69" target="_blank" class="hire-card">
+      <div class="hire-platform">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#1DBF73"><path d="M23 12.5c0 5.799-4.701 10.5-10.5 10.5S2 18.299 2 12.5 6.701 2 12.5 2 23 6.701 23 12.5zM11.07 8.4c0 .822-.657 1.48-1.48 1.48-.82 0-1.48-.658-1.48-1.48 0-.822.66-1.48 1.48-1.48.823 0 1.48.658 1.48 1.48zm5.32 0c0 .822-.657 1.48-1.48 1.48-.82 0-1.48-.658-1.48-1.48 0-.822.66-1.48 1.48-1.48.823 0 1.48.658 1.48 1.48zm-9.07 5.6c.5 2 2.167 3.5 5.18 3.5 3.013 0 4.68-1.5 5.18-3.5H7.32z"/></svg>
+        Fiverr
+      </div>
+      <div class="hire-title">Creative Graphics Designer</div>
+      <div class="hire-desc">Fixed price packages. Fast delivery. Graphics design, social media, logos, branding, packaging, print, and UI/UX all covered with clean files and unlimited revisions.</div>
+      <div class="hire-cta">View My Gig <i class="fas fa-arrow-right"></i></div>
+    </a>
+    <a href="https://www.upwork.com/freelancers/~014ee67a465b323586" target="_blank" class="hire-card">
+      <div class="hire-platform">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#14A800"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.546-1.405 0-2.543-1.14-2.543-2.546V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.449-5.439-5.449z"/></svg>
+        Upwork
+      </div>
+      <div class="hire-title">Freelance Graphic Designer</div>
+      <div class="hire-desc">Hourly or fixed-price contracts. Great for ongoing work or when you need a flexible designer who delivers every time.</div>
+      <div class="hire-cta">View My Profile <i class="fas fa-arrow-right"></i></div>
+    </a>
+  </div>
+  <div class="direct-cta reveal">
+    <div class="direct-cta-text">
+      <div class="t">Prefer to talk directly?</div>
+      <div class="s">Message me on WhatsApp. I reply fast.</div>
+    </div>
+    <a href="https://wa.me/923295646552" target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Message on WhatsApp</a>
+  </div>
+</section>
+
+
+<!-- PROCESS TIMELINE -->
+<section id="process" class="section">
+  <div class="section-label">How It Works</div>
+  <h2 class="section-title reveal">My Design Process —<br>Simple, Clear, Delivered.</h2>
+  <p style="color:var(--text-muted);font-size:0.88rem;max-width:460px;line-height:1.9;margin-bottom:8px;" class="reveal reveal-d1">
+    Every project follows the same structured process so you always know what to expect and when to expect it.
+  </p>
+  <!-- TIMELINE: each step = 1 left cell + 1 right content, paired in same grid row -->
+  <div class="timeline-wrap" id="timelineWrap">
+
+    <!-- Step 01 -->
+    <div class="tl-track-cell">
+      <div class="tl-node active" id="tl-node-0">01</div>
+      <div class="tl-connector"><div class="tl-connector-fill" id="tl-conn-0"></div></div>
+    </div>
+    <div class="tl-item active" id="tl-item-0">
+      <div class="tl-label">Discovery</div>
+      <div class="tl-title">Brief &amp; Brand Understanding</div>
+      <div class="tl-desc">We start with a detailed brief covering your product, target audience, competitors, and the feeling you want your brand to give off. The more I know, the better the design.</div>
+    </div>
+
+    <!-- Step 02 -->
+    <div class="tl-track-cell">
+      <div class="tl-node" id="tl-node-1">02</div>
+      <div class="tl-connector"><div class="tl-connector-fill" id="tl-conn-1"></div></div>
+    </div>
+    <div class="tl-item" id="tl-item-1">
+      <div class="tl-label">Concept</div>
+      <div class="tl-title">Research &amp; Initial Concepts</div>
+      <div class="tl-desc">I research your market, study the competition, and develop initial design directions. This is where the creative thinking happens before any pixel gets placed.</div>
+    </div>
+
+    <!-- Step 03 -->
+    <div class="tl-track-cell">
+      <div class="tl-node" id="tl-node-2">03</div>
+      <div class="tl-connector"><div class="tl-connector-fill" id="tl-conn-2"></div></div>
+    </div>
+    <div class="tl-item" id="tl-item-2">
+      <div class="tl-label">Design</div>
+      <div class="tl-title">Build &amp; Refine in Illustrator</div>
+      <div class="tl-desc">I design in Adobe Illustrator, building layouts, choosing typography, refining colors until everything looks sharp, consistent, and on-brand. You get a preview to review.</div>
+    </div>
+
+    <!-- Step 04 -->
+    <div class="tl-track-cell">
+      <div class="tl-node" id="tl-node-3">04</div>
+      <div class="tl-connector"><div class="tl-connector-fill" id="tl-conn-3"></div></div>
+    </div>
+    <div class="tl-item" id="tl-item-3">
+      <div class="tl-label">Revisions</div>
+      <div class="tl-title">Your Feedback, Applied Fast</div>
+      <div class="tl-desc">You review the design and share feedback. I apply revisions until you are completely happy with the result. No rushed delivery. We get it right.</div>
+    </div>
+
+    <!-- Step 05 -->
+    <div class="tl-track-cell">
+      <div class="tl-node" id="tl-node-4">05</div>
+      <div class="tl-connector"><div class="tl-connector-fill" id="tl-conn-4"></div></div>
+    </div>
+    <div class="tl-item" id="tl-item-4">
+      <div class="tl-label">Delivery</div>
+      <div class="tl-title">Print-Ready Files, Yours to Keep</div>
+      <div class="tl-desc">Final files delivered in AI, PDF, and PNG formats. CMYK color mode, proper bleed and trim marks, ready to send straight to your printer or manufacturer.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section faq-section">
+  <div class="section-label">FAQ</div>
+  <h2 class="section-title reveal">Questions People Ask<br>Before They Order.</h2>
+  <div class="faq-list reveal reveal-d1">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How many revisions do I get? <i class="fas fa-plus faq-icon"></i>
+      </button>
+      <div class="faq-a"><p>Unlimited revisions until you are 100% happy. I do not stop until the design is exactly what you envisioned. Your satisfaction is the only finish line.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What file formats will I receive? <i class="fas fa-plus faq-icon"></i>
+      </button>
+      <div class="faq-a"><p>You get everything you need for print and digital , AI (editable source file), PDF (print-ready with bleed), PNG (transparent background), and JPEG. All in CMYK for print and RGB for digital.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        How long does a packaging design project take? <i class="fas fa-plus faq-icon"></i>
+      </button>
+      <div class="faq-a"><p>Most packaging and label projects are completed within 3 to 5 business days. More complex projects like full brand identities or multi-product lines may take 7 to 10 days. I always give you a clear timeline upfront.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Do you work with international clients? <i class="fas fa-plus faq-icon"></i>
+      </button>
+      <div class="faq-a"><p>Absolutely. I work with clients from the US, UK, Europe, Middle East, and beyond. Communication is in English and I align my working hours to match client timelines when needed.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Will my packaging design be print-ready? <i class="fas fa-plus faq-icon"></i>
+      </button>
+      <div class="faq-a"><p>Yes , every design I deliver is fully print-ready. That means proper bleed and trim marks, CMYK color mode, correct DPI, and packaged source files. You can send it directly to any professional printer.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Can I use the designs commercially? <i class="fas fa-plus faq-icon"></i>
+      </button>
+      <div class="faq-a"><p>Yes, full commercial rights are included with every project. Once delivered and paid, the design is 100% yours to use however you need , product labels, packaging, ads, everything.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        What do I need to provide to get started? <i class="fas fa-plus faq-icon"></i>
+      </button>
+      <div class="faq-a"><p>Just your brand name, product name, any existing logos or brand colors if you have them, and a brief description of what you sell and who your target customer is. I handle everything from there.</p></div>
+    <!--
+    PLACEHOLDER FAQ ITEM - UNLOCK AND DUPLICATE ME
+    HOW TO USE:
+    1. Remove the opening and closing comment tags
+    2. Replace the question text in the button
+    3. Replace the answer text in the p tag
+    4. Duplicate this block for more FAQ items
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        Your new question goes here? <i class="fas fa-plus faq-icon"></i>
+      </button>
+      <div class="faq-a">
+        <p>Your detailed answer goes here. Keep it clear, honest, and helpful. Answer the exact concern a potential client would have before ordering.</p>
+      </div>
+    </div>
+    END PLACEHOLDER FAQ ITEM
+    -->
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS: Remove this comment tag and the closing one below to activate
+<section id="testimonials" class="section" style="background:var(--surface);">
+  <div class="section-label">What Clients Say</div>
+  <h2 class="section-title reveal">Real Words From<br>Real Clients.</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:52px;" class="reveal reveal-d1">
+
+    <div style="background:var(--card);padding:32px 28px;">
+      <div style="display:flex;gap:4px;margin-bottom:16px;">
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.85;margin-bottom:24px;font-style:italic;">"Replace with real client review , what project, what they liked, what result they got."</p>
+      <div style="display:flex;align-items:center;gap:12px;border-top:1px solid var(--border);padding-top:20px;">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.8rem;flex-shrink:0;"><i class="fas fa-user"></i></div>
+        <div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--text);">Client Name</div>
+          <div style="font-size:0.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--brand);">Fiverr - Project Type</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--card);padding:32px 28px;">
+      <div style="display:flex;gap:4px;margin-bottom:16px;">
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.85;margin-bottom:24px;font-style:italic;">"Replace with real client review , what project, what they liked, what result they got."</p>
+      <div style="display:flex;align-items:center;gap:12px;border-top:1px solid var(--border);padding-top:20px;">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.8rem;flex-shrink:0;"><i class="fas fa-user"></i></div>
+        <div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--text);">Client Name</div>
+          <div style="font-size:0.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--brand);">Fiverr - Project Type</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--card);padding:32px 28px;">
+      <div style="display:flex;gap:4px;margin-bottom:16px;">
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+        <i class="fas fa-star" style="color:var(--brand);font-size:0.75rem;"></i>
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.85;margin-bottom:24px;font-style:italic;">"Replace with real client review , what project, what they liked, what result they got."</p>
+      <div style="display:flex;align-items:center;gap:12px;border-top:1px solid var(--border);padding-top:20px;">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.8rem;flex-shrink:0;"><i class="fas fa-user"></i></div>
+        <div>
+          <div style="font-size:0.85rem;font-weight:600;color:var(--text);">Client Name</div>
+          <div style="font-size:0.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--brand);">Fiverr - Project Type</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+End of Testimonials Section -->
+
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title reveal">Let's Build Something<br>Great Together.</h2>
+  <div class="contact-grid">
+    <div>
+      <div class="contact-item reveal">
+        <div class="c-icon"><i class="fas fa-envelope"></i></div>
+        <div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:freelanceryousaf69@gmail.com">freelanceryousaf69@gmail.com</a></div></div>
+      </div>
+      <div class="contact-item reveal reveal-d1">
+        <div class="c-icon"><i class="fab fa-whatsapp"></i></div>
+        <div><div class="c-lbl">WhatsApp</div><div class="c-val"><a href="https://wa.me/923295646552" target="_blank">+92 329 5646552</a></div></div>
+      </div>
+      <div class="contact-item reveal reveal-d2">
+        <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div><div class="c-lbl">Location</div><div class="c-val">Pakistan, Available Worldwide</div></div>
+      </div>
+      <div class="contact-item reveal reveal-d3">
+        <div class="c-icon"><i class="fab fa-behance"></i></div>
+        <div><div class="c-lbl">Portfolio</div><div class="c-val"><a href="https://www.behance.net/SafiVerse" target="_blank">behance.net/SafiVerse</a></div></div>
+      </div>
+    </div>
+    <form class="contact-form reveal reveal-d1" id="cForm">
+      <div class="form-row">
+        <div class="form-group"><label class="form-lbl">Your Name *</label><input type="text" class="form-inp" placeholder="John Smith" required></div>
+        <div class="form-group"><label class="form-lbl">Email *</label><input type="email" class="form-inp" placeholder="john@brand.com" required></div>
+      </div>
+      <div class="form-group">
+        <label class="form-lbl">Service Needed</label>
+        <div class="custom-select-wrap" id="customSelectWrap">
+          <div class="custom-select-trigger" id="customSelectTrigger" onclick="toggleSelect()">
+            <span class="custom-select-val" id="customSelectVal">Select a service</span>
+            <i class="fas fa-chevron-down custom-select-arrow" id="selectArrow"></i>
+          </div>
+          <div class="custom-select-dropdown" id="customSelectDropdown">
+            <div class="csd-option" data-value="" onclick="chooseOption(this)">
+              <i class="fas fa-th-large csd-icon"></i>
+              <span>Select a service</span>
+            </div>
+            <div class="csd-option" data-value="Graphics Design" onclick="chooseOption(this)">
+              <i class="fas fa-palette csd-icon"></i>
+              <span>Graphics Design</span>
+            </div>
+            <div class="csd-option" data-value="Social Media Design" onclick="chooseOption(this)">
+              <i class="fas fa-bullhorn csd-icon"></i>
+              <span>Social Media Design</span>
+            </div>
+            <div class="csd-option" data-value="Logo & Brand Identity" onclick="chooseOption(this)">
+              <i class="fas fa-signature csd-icon"></i>
+              <span>Logo &amp; Brand Identity</span>
+            </div>
+            <div class="csd-option" data-value="Packaging Design" onclick="chooseOption(this)">
+              <i class="fas fa-box-open csd-icon"></i>
+              <span>Packaging Design</span>
+            </div>
+            <div class="csd-option" data-value="Brochure & Print Design" onclick="chooseOption(this)">
+              <i class="fas fa-file-alt csd-icon"></i>
+              <span>Brochure &amp; Print Design</span>
+            </div>
+            <div class="csd-option" data-value="UI/UX Design" onclick="chooseOption(this)">
+              <i class="fas fa-mobile-alt csd-icon"></i>
+              <span>UI/UX Design</span>
+            </div>
+          </div>
+          <input type="hidden" name="service" id="serviceHidden" value="">
+        </div>
+      </div>
+      <div class="form-group"><label class="form-lbl">Project Details *</label><textarea class="form-inp" placeholder="Tell me about your project, brand, timeline, and budget..." required></textarea></div>
+      <button type="submit" class="btn-primary" style="align-self:flex-start;" id="cBtn">
+        <span id="cBtnTxt">Send Message</span> <i class="fas fa-arrow-right"></i>
+      </button>
+      <p id="cMsg" style="font-size:0.78rem;color:var(--brand);display:none;margin-top:6px;"></p>
+    </form>
+  </div>
+</section>
+
+
+<!--
+CASE STUDY SECTION - UNCOMMENT TO ACTIVATE
+<div class="case-study-overlay" id="caseStudyOverlay">
+  <button class="case-study-close" onclick="closeCaseStudy()"><i class="fas fa-times"></i></button>
+  <div class="case-study-inner">
+    <div class="section-label" id="cs-label">Packaging Design</div>
+    <h2 class="section-title" id="cs-title">Nocturne Reserve , Coffee Label</h2>
+    <img class="cs-hero-img" id="cs-img" src="" alt="Project preview">
+    <div class="cs-meta">
+      <div class="cs-meta-item"><div class="cs-meta-label">Category</div><div class="cs-meta-val" id="cs-cat">Packaging Design</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Timeline</div><div class="cs-meta-val" id="cs-time">5 Days</div></div>
+      <div class="cs-meta-item"><div class="cs-meta-label">Deliverables</div><div class="cs-meta-val" id="cs-deliverables">AI, PDF, PNG</div></div>
+    </div>
+    <div class="cs-body">
+      <h3 class="cs-section-title">The Brief</h3>
+      <p id="cs-brief">Project brief goes here.</p>
+      <h3 class="cs-section-title">The Process</h3>
+      <p id="cs-process">Design process description goes here.</p>
+      <h3 class="cs-section-title">The Result</h3>
+      <p id="cs-result">Final result and client feedback goes here.</p>
+    </div>
+  </div>
+</div>
+END CASE STUDY SECTION
+-->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="f-brand">
+      <div class="f-logo">Safiverse<span>.</span></div>
+      <p>Graphics designer from Pakistan. Packaging, logos, social media, branding, print, UI/UX , I bring the same passion and attention to detail to every project.</p>
+      <div class="social-links" style="margin-top:22px;">
+        <a href="https://www.behance.net/SafiVerse" class="s-link" target="_blank"><i class="fab fa-behance"></i></a>
+        <a href="https://www.fiverr.com/yousafkhan69" class="s-link" target="_blank">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12.5c0 5.799-4.701 10.5-10.5 10.5S2 18.299 2 12.5 6.701 2 12.5 2 23 6.701 23 12.5zM11.07 8.4c0 .822-.657 1.48-1.48 1.48-.82 0-1.48-.658-1.48-1.48 0-.822.66-1.48 1.48-1.48.823 0 1.48.658 1.48 1.48zm5.32 0c0 .822-.657 1.48-1.48 1.48-.82 0-1.48-.658-1.48-1.48 0-.822.66-1.48 1.48-1.48.823 0 1.48.658 1.48 1.48zm-9.07 5.6c.5 2 2.167 3.5 5.18 3.5 3.013 0 4.68-1.5 5.18-3.5H7.32z"/></svg>
+        </a>
+        <a href="https://wa.me/923295646552" class="s-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:freelanceryousaf69@gmail.com" class="s-link"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Graphics Design</a></li>
+        <li><a href="#services">Packaging & Labels</a></li>
+        <li><a href="#services">Logo & Branding</a></li>
+        <li><a href="#services">Social Media Design</a></li>
+        <li><a href="#services">Print Design</a></li>
+        <li><a href="#services">UI/UX Design</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Hire Me</h4>
+      <ul>
+        <li><a href="https://www.fiverr.com/yousafkhan69" target="_blank">Fiverr</a></li>
+        <li><a href="https://www.upwork.com/freelancers/~014ee67a465b323586" target="_blank">Upwork</a></li>
+        <li><a href="https://www.behance.net/SafiVerse" target="_blank">Behance</a></li>
+        <li><a href="https://wa.me/923295646552" target="_blank">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="yr"></span> Safiverse , Safi. All rights reserved.</p>
+    <p style="font-size:0.68rem;color:var(--border);">Packaging & Graphics Design · Pakistan</p>
+  </div>
+</footer>
+
+<script>
+// =============================================
+// AVAILABILITY STATUS — CHANGE THIS ONE LINE
+// Options: "available" | "limited" | "booked"
+// =============================================
+const AVAILABILITY = "available"; // <-- change me
+
+(function setAvailability() {
+  const configs = {
+    available: { color: "#22C55E", border: "rgba(34,197,94,0.25)",  bg: "rgba(34,197,94,0.06)",  text: "Available" },
+    limited:   { color: "#EAB308", border: "rgba(234,179,8,0.25)",  bg: "rgba(234,179,8,0.06)",  text: "Limited Slots" },
+    booked:    { color: "#EF4444", border: "rgba(239,68,68,0.25)",  bg: "rgba(239,68,68,0.06)",  text: "Fully Booked" }
+  };
+  const cfg = configs[AVAILABILITY] || configs.available;
+  document.addEventListener("DOMContentLoaded", () => {
+    const wrap = document.getElementById("navStatus");
+    const dot  = wrap && wrap.querySelector(".nav-status-dot");
+    const lbl  = wrap && wrap.querySelector(".nav-status-label");
+    if (!wrap) return;
+    wrap.style.borderColor = cfg.border;
+    wrap.style.background  = cfg.bg;
+    dot.style.background   = cfg.color;
+    lbl.style.color        = cfg.color;
+    lbl.textContent        = cfg.text;
+    const heroDot = document.querySelector(".avail-status-dot");
+    const heroTxt = document.querySelector(".avail-status-text");
+    if (heroDot) heroDot.style.background = cfg.color;
+    if (heroTxt) { heroTxt.style.color = cfg.color; heroTxt.textContent = cfg.text + " for Projects"; }
+  });
+})();
+
+// ===== POPUP DATA =====
+const popupData = {
+  packaging: {
+    eyebrow: 'Packaging Design',
+    title: 'Ready to make your product impossible to ignore?',
+    subtitle: "Great packaging does not just protect the product. It sells it before anyone even opens it. Let us build yours.",
+    fiverr_title: 'Order Packaging on Fiverr',
+    fiverr_text: "Fixed price. Fast turnaround. I will design a label, box, or pouch that actually stands out on shelf. Print-ready files included.",
+    upwork_title: 'Hire for Packaging on Upwork',
+    upwork_text: "Need something more custom or ongoing? Lets set up a contract on Upwork for full creative control and flexibility."
+  },
+  logo: {
+    eyebrow: "Logo & Brand Identity",
+    title: "Hello awesome — ready to build your brand from the ground up?",
+    subtitle: "Your logo is the face of everything you do. Lets make it one people actually remember.",
+    fiverr_title: "Order Your Logo on Fiverr",
+    fiverr_text: "Quick, clean, and professional. I will craft a logo that represents your brand perfectly — with full files delivered fast.",
+    upwork_title: "Build Your Brand on Upwork",
+    upwork_text: "Want a full brand identity — logo, colors, fonts, and guidelines? Lets do it right with a proper project on Upwork."
+  },
+  social: {
+    eyebrow: "Social Media Design",
+    title: "Your feed deserves to look as good as your brand.",
+    subtitle: "Scroll-stopping posts that look consistent, on-brand, and built to get engagement. Lets get your social media sorted.",
+    fiverr_title: "Order Social Posts on Fiverr",
+    fiverr_text: "Need posts, stories, or a full social kit? Order a package on Fiverr and I will deliver a set that looks sharp and consistent.",
+    upwork_title: "Monthly Social Media Design on Upwork",
+    upwork_text: "Looking for a recurring designer for your social content? Lets set up a monthly retainer on Upwork — reliable, consistent, brand-accurate."
+  },
+  print: {
+    eyebrow: "Brochure & Print Design",
+    title: "Print still works — when it looks this good.",
+    subtitle: "Brochures, flyers, and print materials built for real-world printing. Right specs, right colors, right impression.",
+    fiverr_title: "Order Print Design on Fiverr",
+    fiverr_text: "Brochure, flyer, or leaflet — I will design it print-ready with proper bleed, CMYK colors, and everything your printer needs.",
+    upwork_title: "Print Design Project on Upwork",
+    upwork_text: "Have a bigger print campaign in mind? Lets work through Upwork for a structured project with proper revisions and delivery."
+  },
+  brand: {
+    eyebrow: "Brand Style Guide",
+    title: "Lets lock in your brand so its consistent everywhere.",
+    subtitle: "Colors, fonts, logo rules — a complete brand guide that keeps every designer and platform on the same page.",
+    fiverr_title: "Order Brand Guide on Fiverr",
+    fiverr_text: "I will put together a clean, professional brand style guide that covers everything your team needs to stay consistent.",
+    upwork_title: "Full Branding on Upwork",
+    upwork_text: "Need the full package — logo, brand identity, and style guide? Lets do it as a complete project on Upwork from start to finish."
+  },
+  uiux: {
+    eyebrow: "UI/UX Design",
+    title: "Ready to build a digital experience people actually enjoy?",
+    subtitle: "Clean, modern interfaces designed to work as good as they look. Built in Figma and Adobe XD with real users in mind.",
+    fiverr_title: "Order UI Design on Fiverr",
+    fiverr_text: "Need a landing page, app screen, or web design? I will build it clean and modern in Figma — ready for development.",
+    upwork_title: "UI/UX Project on Upwork",
+    upwork_text: "Building a full product? Lets work through Upwork for a proper end-to-end design project with wireframes, mockups, and handoff files."
+  }
+};
+
+function openPopup(type) {
+  const d = popupData[type];
+  document.getElementById('popupEyebrow').textContent = d.eyebrow;
+  document.getElementById('popupTitle').textContent = d.title;
+  document.getElementById('popupSubtitle').textContent = d.subtitle;
+  document.getElementById('fiverr-title').textContent = d.fiverr_title;
+  document.getElementById('fiverr-text').textContent = d.fiverr_text;
+  document.getElementById('upwork-title').textContent = d.upwork_title;
+  document.getElementById('upwork-text').textContent = d.upwork_text;
+  document.getElementById('hirePopup').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closePopup() {
+  document.getElementById('hirePopup').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.getElementById('hirePopup').addEventListener('click', function(e) {
+  if (e.target === this) closePopup();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
+
+// ===== THEME TOGGLE =====
+const html = document.documentElement;
+const themeBtn = document.getElementById('themeBtn');
+const themeIcon = document.getElementById('themeIcon');
+let isDark = true;
+themeBtn.addEventListener('click', () => {
+  isDark = !isDark;
+  html.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+  // Update navbar scrolled state
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 60) {
+    nav.style.background = isDark ? 'rgba(13,13,13,0.96)' : 'rgba(248,245,240,0.96)';
+  }
+});
+
+// Scroll handled by extended listener below
+
+// Initial reveal
+document.querySelectorAll('.reveal').forEach(el => {
+  if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('visible');
+});
+
+// ===== MOBILE MENU =====
+function openMob() { document.getElementById('mobMenu').classList.add('open'); document.getElementById('mobOverlay').classList.add('open'); }
+function closeMob() { document.getElementById('mobMenu').classList.remove('open'); document.getElementById('mobOverlay').classList.remove('open'); }
+
+// ===== PORTFOLIO FILTER WITH SMOOTH TRANSITION =====
+const filterBtns = document.querySelectorAll('.filter-btn');
+const pItems = document.querySelectorAll('.portfolio-item');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+
+    pItems.forEach(item => {
+      const match = f === 'all' || item.dataset.cat === f;
+      if (!match) {
+        item.classList.add('hiding');
+        item.classList.remove('showing');
+        setTimeout(() => { item.style.display = 'none'; }, 380);
+      } else {
+        item.style.display = 'block';
+        setTimeout(() => {
+          item.classList.remove('hiding');
+          item.classList.add('showing');
+        }, 20);
+      }
+    });
+  });
+});
+
+// ===== CUSTOM VIDEO PLAYER =====
+const vid = document.getElementById('myVid');
+const vOverlay = document.getElementById('vidOverlay');
+const vidFill = document.getElementById('vidFill');
+const vidDot = document.getElementById('vidDot');
+const vidCurrent = document.getElementById('vidCurrent');
+const vidDuration = document.getElementById('vidDuration');
+const vidBtnIcon = document.getElementById('vidBtnIcon');
+
+function formatTime(s) {
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return m + ':' + (sec < 10 ? '0' : '') + sec;
+}
+
+function startVideo() {
+  vid.play();
+  vOverlay.classList.add('hidden');
+}
+
+function toggleVid() {
+  if (vid.paused) {
+    vid.play();
+    vidBtnIcon.className = 'fas fa-pause';
+  } else {
+    vid.pause();
+    vidBtnIcon.className = 'fas fa-play';
+  }
+}
+
+function toggleMute() {
+  vid.muted = !vid.muted;
+  document.getElementById('vidVolIcon').className = vid.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+}
+
+function toggleFullscreen() {
+  const wrap = document.getElementById('videoWrap');
+  if (!document.fullscreenElement) {
+    wrap.requestFullscreen && wrap.requestFullscreen();
+  } else {
+    document.exitFullscreen && document.exitFullscreen();
+  }
+}
+
+function seekVideo(e) {
+  const wrap = document.getElementById('vidProgressWrap');
+  const rect = wrap.getBoundingClientRect();
+  const pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+  vid.currentTime = pct * vid.duration;
+}
+
+vid.addEventListener('loadedmetadata', () => {
+  vidDuration.textContent = formatTime(vid.duration);
+});
+
+vid.addEventListener('timeupdate', () => {
+  if (!vid.duration) return;
+  const pct = (vid.currentTime / vid.duration) * 100;
+  vidFill.style.width = pct + '%';
+  vidDot.style.left = pct + '%';
+  vidCurrent.textContent = formatTime(vid.currentTime);
+});
+
+vid.addEventListener('play', () => {
+  vidBtnIcon.className = 'fas fa-pause';
+  vOverlay.classList.add('hidden');
+});
+
+vid.addEventListener('pause', () => {
+  vidBtnIcon.className = 'fas fa-play';
+});
+
+vid.addEventListener('ended', () => {
+  vidBtnIcon.className = 'fas fa-play';
+  vidFill.style.width = '0%';
+  vidDot.style.left = '0%';
+  vidCurrent.textContent = '0:00';
+  vOverlay.classList.remove('hidden');
+});
+
+// Click anywhere on video to play/pause
+vid.addEventListener('click', (e) => {
+  // Prevent triggering if click was on controls
+  toggleVid();
+});
+
+// ===== CUSTOM ANIMATED SELECT =====
+function toggleSelect() {
+  const trigger  = document.getElementById('customSelectTrigger');
+  const dropdown = document.getElementById('customSelectDropdown');
+  const isOpen   = dropdown.classList.contains('open');
+  if (isOpen) {
+    closeSelect();
+  } else {
+    trigger.classList.add('open');
+    dropdown.classList.add('open');
+  }
+}
+function closeSelect() {
+  document.getElementById('customSelectTrigger').classList.remove('open');
+  document.getElementById('customSelectDropdown').classList.remove('open');
+}
+function chooseOption(el) {
+  const val  = el.getAttribute('data-value');
+  const text = el.querySelector('span').textContent;
+  // Update trigger text
+  document.getElementById('customSelectVal').textContent = text;
+  // Update hidden input
+  document.getElementById('serviceHidden').value = val;
+  // Mark selected
+  document.querySelectorAll('.csd-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  // Close after short delay so user sees the selection
+  setTimeout(closeSelect, 180);
+}
+// Close when clicking outside
+document.addEventListener('click', (e) => {
+  const wrap = document.getElementById('customSelectWrap');
+  if (wrap && !wrap.contains(e.target)) closeSelect();
+});
+
+// ===== CONTACT FORM =====
+document.getElementById('cForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('cBtn');
+  const txt = document.getElementById('cBtnTxt');
+  const msg = document.getElementById('cMsg');
+  txt.textContent = 'Sending...'; btn.disabled = true;
+  setTimeout(() => {
+    txt.textContent = 'Sent!'; msg.style.display = 'block';
+    msg.textContent = "Thanks! I will get back to you within 24 hours.";
+    setTimeout(() => { txt.textContent = 'Send Message'; btn.disabled = false; this.reset(); msg.style.display = 'none'; }, 4000);
+  }, 1500);
+});
+
+// ===== YEAR =====
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// =============================================
+// PEN NIB CURSOR
+// TO DISABLE: comment out this entire block
+// =============================================
+const penCursor = document.getElementById('pen-cursor');
+let penX = -100, penY = -100;
+
+document.addEventListener('mousemove', (e) => {
+  penX = e.clientX;
+  penY = e.clientY;
+  penCursor.style.left = penX + 'px';
+  penCursor.style.top  = penY + 'px';
+});
+
+// Tilt on hoverable elements
+document.querySelectorAll('a, button, [onclick], .filter-btn, .svc-hire-btn, .faq-q, .portfolio-item, .service-card').forEach(el => {
+  el.addEventListener('mouseenter', () => penCursor.classList.add('hovered'));
+  el.addEventListener('mouseleave', () => penCursor.classList.remove('hovered'));
+});
+
+// Click animation — ink splash + particles
+document.addEventListener('click', (e) => {
+  // Ink drop ripple
+  const drop = document.createElement('div');
+  drop.className = 'ink-drop';
+  drop.style.left = e.clientX + 'px';
+  drop.style.top  = e.clientY + 'px';
+  document.body.appendChild(drop);
+  setTimeout(() => drop.remove(), 600);
+
+  // Tiny ink particles burst (6 particles)
+  const angles = [0, 60, 120, 180, 240, 300];
+  angles.forEach((angle, i) => {
+    const particle = document.createElement('div');
+    particle.className = 'ink-particle';
+    const dist = 18 + Math.random() * 14;
+    const rad  = (angle + Math.random() * 30) * Math.PI / 180;
+    const tx   = Math.cos(rad) * dist + 'px';
+    const ty   = Math.sin(rad) * dist + 'px';
+    particle.style.left = e.clientX + 'px';
+    particle.style.top  = e.clientY + 'px';
+    particle.style.setProperty('--tx', tx);
+    particle.style.setProperty('--ty', ty);
+    particle.style.animationDelay = (i * 0.03) + 's';
+    document.body.appendChild(particle);
+    setTimeout(() => particle.remove(), 600);
+  });
+});
+
+// Hide cursor when leaving window
+document.addEventListener('mouseleave', () => { penCursor.style.opacity = '0'; });
+document.addEventListener('mouseenter', () => { penCursor.style.opacity = '1'; });
+
+// =============================================
+// HERO TYPEWRITER EFFECT
+// =============================================
+const heroWords = [
+  "Packaging",
+  "Logos",
+  "Brand Identity",
+  "Social Media",
+  "UI/UX",
+  "Print Design",
+  "Brochures",
+  "Illustrations"
+];
+let heroWordIndex = 0;
+let heroCharIndex = 0;
+let heroDeleting = false;
+const heroEl = document.getElementById('heroTypewriter');
+
+function typeHero() {
+  if (!heroEl) return;
+  const word = heroWords[heroWordIndex];
+  if (heroDeleting) {
+    heroEl.textContent = word.substring(0, heroCharIndex - 1);
+    heroCharIndex--;
+  } else {
+    heroEl.textContent = word.substring(0, heroCharIndex + 1);
+    heroCharIndex++;
+  }
+  let speed = heroDeleting ? 60 : 110;
+  if (!heroDeleting && heroCharIndex === word.length) {
+    speed = 1800;
+    heroDeleting = true;
+  } else if (heroDeleting && heroCharIndex === 0) {
+    heroDeleting = false;
+    heroWordIndex = (heroWordIndex + 1) % heroWords.length;
+    speed = 300;
+  }
+  setTimeout(typeHero, speed);
+}
+setTimeout(typeHero, 1200);
+
+// Language toggle removed
+
+// =============================================
+// SCROLL-TRACKED PROCESS TIMELINE
+// Each connector fills as user scrolls to that step
+// =============================================
+function updateTimeline() {
+  const wrap = document.getElementById('timelineWrap');
+  if (!wrap) return;
+
+  const total = 5;
+
+  for (let i = 0; i < total; i++) {
+    const item     = document.getElementById('tl-item-' + i);
+    const node     = document.getElementById('tl-node-' + i);
+    const conn     = document.getElementById('tl-conn-' + i);
+    if (!item || !node) continue;
+
+    const rect    = item.getBoundingClientRect();
+    const trigger = window.innerHeight * 0.62;
+
+    // Item entered viewport
+    const reached = rect.top < trigger;
+
+    // Node active when reached
+    node.classList.toggle('active', reached);
+    item.classList.toggle('active', reached && (i === total - 1 ||
+      (() => {
+        const next = document.getElementById('tl-item-' + (i + 1));
+        return !next || next.getBoundingClientRect().top >= trigger;
+      })()
+    ));
+
+    // Fill connector between this node and the next
+    if (conn && i < total - 1) {
+      const nextItem = document.getElementById('tl-item-' + (i + 1));
+      if (!nextItem) continue;
+      const nextRect = nextItem.getBoundingClientRect();
+      if (!reached) {
+        conn.style.height = '0%';
+      } else if (nextRect.top < trigger) {
+        conn.style.height = '100%';
+      } else {
+        // Partially fill based on scroll progress between this and next step
+        const start = rect.top + rect.height * 0.3;
+        const end   = nextRect.top + nextRect.height * 0.3;
+        const progress = Math.min(1, Math.max(0, (trigger - rect.top) / (end - start + 1)));
+        conn.style.height = (progress * 100) + '%';
+      }
+    }
+  }
+}
+
+window.addEventListener('scroll', updateTimeline, { passive: true });
+window.addEventListener('load', updateTimeline);
+document.addEventListener('DOMContentLoaded', updateTimeline);
+
+// =============================================
+// SECTION FADE TRANSITIONS
+// (applies to all major sections on scroll)
+// =============================================
+const fadeSections = document.querySelectorAll('section, .clients-section, .stats-bar, .marquee-wrap');
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+fadeSections.forEach(sec => {
+  sec.classList.add('section-fade');
+  fadeObserver.observe(sec);
+});
+
+// =============================================
+// CASE STUDY FUNCTIONS (ready to use when uncommented)
+// =============================================
+/*
+const caseStudies = {
+  nocturne: {
+    label: 'Packaging Design',
+    title: 'Nocturne Reserve — Coffee Label',
+    img: './assets/nocturne-preview.jpg',
+    cat: 'Packaging Design',
+    time: '5 Days',
+    deliverables: 'AI, PDF, PNG',
+    brief: 'A premium coffee brand needed packaging that felt dark, luxurious and editorial. The brief was clear — it had to look expensive on shelf.',
+    process: 'Started with typographic exploration in Illustrator. Tested multiple gold foil effects digitally. Final layout uses Playfair Display paired with custom botanical crescent illustration.',
+    result: 'Client approved on first revision. The design positioned the brand as a luxury product and was used on 500 units of the first production run.'
+  }
+};
+function openCaseStudy(id) {
+  const d = caseStudies[id];
+  if (!d) return;
+  document.getElementById('cs-label').textContent = d.label;
+  document.getElementById('cs-title').textContent = d.title;
+  document.getElementById('cs-img').src = d.img;
+  document.getElementById('cs-cat').textContent = d.cat;
+  document.getElementById('cs-time').textContent = d.time;
+  document.getElementById('cs-deliverables').textContent = d.deliverables;
+  document.getElementById('cs-brief').textContent = d.brief;
+  document.getElementById('cs-process').textContent = d.process;
+  document.getElementById('cs-result').textContent = d.result;
+  document.getElementById('caseStudyOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCaseStudy() {
+  document.getElementById('caseStudyOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// To open: add onclick="openCaseStudy('nocturne')" to any portfolio item
+*/
+
+// ===== LOADING SCREEN =====
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('hide');
+    document.body.style.overflow = '';
+  }, 2400);
+});
+document.body.style.overflow = 'hidden';
+
+// ===== CUSTOM CURSOR =====
+// TO DISABLE CURSOR EFFECT: comment out the 4 lines below (cursorDot, cursorRing, mousemove listener, hoverables listener)
+// Old circle cursor removed — replaced with pen nib cursor above
+
+// ===== ANIMATED NUMBER COUNTERS =====
+function animateCounter(el) {
+  const target = parseInt(el.getAttribute('data-target'));
+  const suffix = el.getAttribute('data-suffix') || '';
+  const duration = 1800;
+  const start = performance.now();
+  const update = (now) => {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+      entry.target.classList.add('counted');
+      animateCounter(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+
+// ===== FAQ ACCORDION =====
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-q.open').forEach(b => {
+    b.classList.remove('open');
+    b.nextElementSibling.classList.remove('open');
+  });
+  // Open clicked if it was closed
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+
+// ===== WHATSAPP FLOAT VISIBILITY =====
+// (handled in scroll event below — show after 300px)
+
+// ===== BACK TO TOP PROGRESS RING =====
+const bttFill = document.getElementById('btt-fill');
+const circumference = 2 * Math.PI * 22; // r=22
+
+// ===== SCROLL EVENTS (EXTENDED) =====
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = scrollTop / docHeight;
+
+  // Progress bar
+  document.getElementById('progress').style.width = (pct * 100) + '%';
+
+  // BTT progress ring
+  const offset = circumference - (pct * circumference);
+  if (bttFill) bttFill.style.strokeDashoffset = offset;
+
+  // BTT + WhatsApp visibility
+  document.getElementById('btt').classList.toggle('show', scrollTop > 400);
+  document.getElementById('wa-float').classList.toggle('show', scrollTop > 300);
+
+  // Navbar
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', scrollTop > 60);
+
+  // Active nav
+  const sectionIds = ['home','about','services','portfolio','video','hire','process','faq','contact'];
+  let cur = '';
+  sectionIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= 120) cur = id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+
+  // Reveal on scroll
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('visible');
+  });
+});
+</script>
+</body>
+</html>
